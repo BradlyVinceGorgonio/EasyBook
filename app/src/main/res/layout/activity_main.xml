@@ -21,11 +21,11 @@
         app:srcCompat="@drawable/easy" />
 
     <EditText
-        android:id="@+id/usernameLgn"
+        android:id="@+id/emailLgn"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:ems="10"
-        android:hint="Username:"
+        android:hint="Email:"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameLgn"
+        app:layout_constraintTop_toBottomOf="@+id/emailLgn"
         app:layout_constraintVertical_bias="0.062" />
 
     <Button

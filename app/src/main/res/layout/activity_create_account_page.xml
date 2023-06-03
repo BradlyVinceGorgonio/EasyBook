@@ -69,7 +69,8 @@
         android:layout_width="282dp"
         android:layout_height="121dp"
         tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="385dp">
+        tools:layout_editor_absoluteY="384dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
