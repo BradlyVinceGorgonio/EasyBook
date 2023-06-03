@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "384658359724",
+    "project_id": "easy-book-bf9cc",
+    "storage_bucket": "easy-book-bf9cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384658359724:android:14b6c9fbf2afa215df6609",
+        "android_client_info": {
+          "package_name": "com.example.easybook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384658359724-vd5r37is1b2u82ktv9oa11k9b8178cac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb_4RWE0SI_EDHIACdrhXN34qYG4aSY3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384658359724-vd5r37is1b2u82ktv9oa11k9b8178cac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
