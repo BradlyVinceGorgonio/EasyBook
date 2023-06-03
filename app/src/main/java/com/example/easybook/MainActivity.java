@@ -14,5 +14,6 @@ public class MainActivity extends AppCompatActivity {
         //bago page
         //sana marecieve mo
         //comit and push ko na
+        //daniel pushing ups betlogies
     }
 }
