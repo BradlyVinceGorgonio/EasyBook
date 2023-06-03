@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/easy" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/usernameLgn"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:ems="10"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.076" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/passwordLgn"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:ems="10"
@@ -45,11 +45,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/usernameLgn"
         app:layout_constraintVertical_bias="0.062" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginBtn"
         android:layout_width="130dp"
         android:layout_height="70dp"
         android:backgroundTint="@color/black"
@@ -59,11 +59,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLgn"
         app:layout_constraintVertical_bias="0.103" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/createAccBtn"
         android:layout_width="160dp"
         android:layout_height="86dp"
         android:backgroundTint="@color/black"
@@ -73,6 +73,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn"
         app:layout_constraintVertical_bias="0.151" />
 </androidx.constraintlayout.widget.ConstraintLayout>
