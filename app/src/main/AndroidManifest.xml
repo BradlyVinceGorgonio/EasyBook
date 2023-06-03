@@ -15,6 +15,9 @@
         android:theme="@style/Theme.EasyBook"
         tools:targetApi="31">
         <activity
+            android:name=".CreateAccountPage"
+            android:exported="false" />
+        <activity
             android:name=".LoginPage"
             android:exported="false" />
         <activity
