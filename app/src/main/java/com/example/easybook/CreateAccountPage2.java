@@ -12,19 +12,27 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CreateAccountPage2 extends AppCompatActivity {
     EditText  name, lastName, age, gender, contactNumber, address, city, Zipcode, birthDate;
 
+
     private static final String TAG = "CreateAccountPage2";
     private FirebaseAuth mAuth;
-
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     Button registerBtn;
 
     @Override
@@ -73,7 +81,9 @@ public class CreateAccountPage2 extends AppCompatActivity {
             public void onClick(View view)
             {
                 //Lagay mo sa DB lahat ng user credentials
-
+                addCollection(nameText, lastNameText, ageText, genderText, contactText,
+                        addressText, cityText, zipcodeText, birthDateText
+                        );
 
                 Intent intent = getIntent();
                 if (intent != null) {
@@ -88,6 +98,42 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void addCollection(String name, String lastName, String age
+    , String gender, String contactNum, String Address, String city, String zipcode, String birthDate
+    )
+    {
+        // Create a new user with a first and last name
+        Map<String, Object> user = new HashMap<>();
+        user.put("first name", name);
+        user.put("last name", lastName);
+        user.put("age", age);
+        user.put("gender", gender);
+        user.put("contact number", contactNum);
+        user.put("Address", Address);
+        user.put("City", city);
+        user.put("Zipcode", zipcode);
+        user.put("birth date", birthDate);
+
+
+
+        // Add a new document with a generated ID
+        db.collection("users")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
+
     }
 
     private void createAccount(String email, String password) {

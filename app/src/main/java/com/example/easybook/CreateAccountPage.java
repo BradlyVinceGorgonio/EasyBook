@@ -61,7 +61,6 @@ public class CreateAccountPage extends AppCompatActivity
             public void onClick(View view) {
 
 
-
                 Intent intent = new Intent(CreateAccountPage.this, CreateAccountPage2.class);
                 intent.putExtra("username", usernameRgtr.getText().toString().trim());
                 intent.putExtra("email", emailRgtr.getText().toString().trim());
