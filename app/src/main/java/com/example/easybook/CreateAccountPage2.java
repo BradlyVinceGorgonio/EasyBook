@@ -32,7 +32,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
     private static final String TAG = "CreateAccountPage2";
     private FirebaseAuth mAuth;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     Button registerBtn;
 
     @Override
@@ -80,10 +80,8 @@ public class CreateAccountPage2 extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                //Lagay mo sa DB lahat ng user credentials
-                addCollection(nameText, lastNameText, ageText, genderText, contactText,
-                        addressText, cityText, zipcodeText, birthDateText
-                        );
+
+
 
                 Intent intent = getIntent();
                 if (intent != null) {
@@ -91,7 +89,13 @@ public class CreateAccountPage2 extends AppCompatActivity {
                     String email = intent.getStringExtra("email");
                     String password = intent.getStringExtra("password");
 
+
+
                     createAccount(email,password);
+                    //Lagay mo sa DB lahat ng user credentials
+                    addCollection(username, nameText, lastNameText, ageText, genderText, contactText,
+                            addressText, cityText, zipcodeText, birthDateText
+                    );
                 }
 
 
@@ -100,12 +104,14 @@ public class CreateAccountPage2 extends AppCompatActivity {
         });
     }
 
-    public void addCollection(String name, String lastName, String age
+    public void addCollection(String username,String name, String lastName, String age
     , String gender, String contactNum, String Address, String city, String zipcode, String birthDate
     )
     {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         // Create a new user with a first and last name
         Map<String, Object> user = new HashMap<>();
+        user.put("username", username);
         user.put("first name", name);
         user.put("last name", lastName);
         user.put("age", age);
@@ -119,7 +125,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
 
         // Add a new document with a generated ID
-        db.collection("users")
+        db.collection("costumer")
                 .add(user)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
