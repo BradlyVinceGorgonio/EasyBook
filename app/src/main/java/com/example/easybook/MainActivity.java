@@ -1,7 +1,5 @@
 package com.example.easybook;
 
-import static com.google.firebase.inappmessaging.internal.Logging.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +14,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import static com.google.firebase.inappmessaging.internal.Logging.TAG;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     EditText emailLgn, passLgn;
-    Button loginBtn, createAcc;
+    Button loginBtn, createAcsc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,8 +37,15 @@ public class MainActivity extends AppCompatActivity {
         emailLgn = (EditText) findViewById(R.id.emailLgn);
         passLgn = (EditText) findViewById(R.id.passwordLgn);
         loginBtn = (Button) findViewById(R.id.loginBtn);
-        createAcc = (Button) findViewById(R.id.createAccBtn);
+        createAcsc = (Button) findViewById(R.id.createAccBtnR);
 
+
+        createAcsc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CreateAccountPage.class);
+            }
+        });
 
         loginBtn.setOnClickListener(new View.OnClickListener()
         {
@@ -52,12 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        createAcc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CreateAccountPage.class);
-            }
-        });
+
 
     }
 
