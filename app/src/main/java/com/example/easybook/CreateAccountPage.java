@@ -2,7 +2,9 @@ package com.example.easybook;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -34,10 +36,23 @@ public class CreateAccountPage extends AppCompatActivity
         confirmCB = (CheckBox) findViewById(R.id.confirmCB);
         nextPageBtn = (Button) findViewById(R.id.nextPageBtn);
 
+        String userText = usernameRgtr.getText().toString().trim();
+        String emailText = emailRgtr.getText().toString().trim();
+        String passwordText = passwordRgtr.getText().toString().trim();
+        String repasswordText = repasswordRgtr.getText().toString().trim();
+
         confirmCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                nextPageBtn.setClickable(!isChecked);
+
+                boolean allTextFilled = false;
+
+                if(passwordRgtr.equals(repasswordRgtr) && !TextUtils.isEmpty(userText) && !TextUtils.isEmpty(emailText) && !TextUtils.isEmpty(passwordText) && !TextUtils.isEmpty(repasswordText))
+                {
+                    allTextFilled = true;
+                }
+
+                nextPageBtn.setClickable(isChecked || allTextFilled);
             }
         });
 
@@ -45,6 +60,9 @@ public class CreateAccountPage extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
+                CreateAccountPage2 page2 = new CreateAccountPage2(usernameRgtr, emailRgtr, passwordRgtr);
+                Intent intent = new Intent(CreateAccountPage.this, CreateAccountPage2.class);
+                startActivity(intent);
             }
         });
     }

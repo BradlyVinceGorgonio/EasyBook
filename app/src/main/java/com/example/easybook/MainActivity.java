@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    private static final String TAG = "MainActivity";
     EditText emailLgn, passLgn;
     Button loginBtn, createAcc;
 
@@ -45,13 +46,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                String Semail = emailLgn.getText().toString();
-                String Spass = passLgn.getText().toString();
+                String Semail = emailLgn.getText().toString().trim();
+                String Spass = passLgn.getText().toString().trim();
                 signIn(Semail, Spass);
             }
         });
 
+        createAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CreateAccountPage.class);
+            }
+        });
+
     }
+
+
 
     private void signIn(String email, String password) {
         // [START sign_in_with_email]
