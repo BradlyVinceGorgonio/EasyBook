@@ -19,27 +19,19 @@ import com.google.firebase.auth.FirebaseUser;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-import java.util.Date;
-
 public class CreateAccountPage2 extends AppCompatActivity {
-    EditText username,email, password, name, lastName, age, gender, contactNumber, address, city, Zipcode, birthDate;
-    private static final String TAG = "CreateAccountPage2";
-    Button registerBtn;
+    EditText  name, lastName, age, gender, contactNumber, address, city, Zipcode, birthDate;
 
+    private static final String TAG = "CreateAccountPage2";
     private FirebaseAuth mAuth;
 
-    CreateAccountPage2(EditText username, EditText email, EditText password)
-    {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
+    Button registerBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account_page2);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -74,14 +66,26 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
         registerBtn.setClickable(allTextFilled);
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String Semail = email.getText().toString().trim();
-                String Spass = password.getText().toString().trim();
 
+        registerBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
                 //Lagay mo sa DB lahat ng user credentials
-                    createAccount(Semail,Spass);
+
+
+                Intent intent = getIntent();
+                if (intent != null) {
+                    String username = intent.getStringExtra("username");
+                    String email = intent.getStringExtra("email");
+                    String password = intent.getStringExtra("password");
+
+                    createAccount(email,password);
+                }
+
+
+
             }
         });
     }

@@ -60,9 +60,14 @@ public class CreateAccountPage extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                CreateAccountPage2 page2 = new CreateAccountPage2(usernameRgtr, emailRgtr, passwordRgtr);
+
+
                 Intent intent = new Intent(CreateAccountPage.this, CreateAccountPage2.class);
+                intent.putExtra("username", usernameRgtr.getText().toString().trim());
+                intent.putExtra("email", emailRgtr.getText().toString().trim());
+                intent.putExtra("password", passwordRgtr.getText().toString().trim());
                 startActivity(intent);
+
             }
         });
     }
