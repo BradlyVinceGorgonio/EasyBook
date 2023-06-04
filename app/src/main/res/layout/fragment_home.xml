@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="420dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="420dp"
+            android:adjustViewBounds="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/counseling" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="420dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fitnessorig" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="420dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/gaming" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="420dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/programming" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="420dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sportsorig" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

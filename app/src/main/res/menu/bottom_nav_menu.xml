@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:icon="@drawable/homevector"
+        android:id="@+id/homeButton" />
+
+    <item android:title="Chat"
+        android:icon="@drawable/chatvector"
+
+        android:id="@+id/messageButton"/>
+
+    <item android:title="Inbox"
+        android:icon="@drawable/emailvector"
+
+        android:id="@+id/emailButton"/>
+
+    <item android:title= "Profile"
+        android:icon="@drawable/personvector"
+        android:id="@+id/profileButton"/>
+</menu>
