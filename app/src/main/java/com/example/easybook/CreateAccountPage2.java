@@ -99,11 +99,10 @@ public class CreateAccountPage2 extends AppCompatActivity {
                     String zipcodeText = Zipcode.getText().toString().trim();
                     String birthDateText = birthDate.getText().toString().trim();
 
-                    createAccount(email,password);
+                    createAccount(email, password, username, nameText, lastNameText, ageText, genderText, contactText,
+                            addressText, cityText, zipcodeText, birthDateText);
                     //Lagay mo sa DB lahat ng user credentials
-                    addCollection(username, nameText, lastNameText, ageText, genderText, contactText,
-                            addressText, cityText, zipcodeText, birthDateText
-                    );
+
                 }
 
 
@@ -112,13 +111,14 @@ public class CreateAccountPage2 extends AppCompatActivity {
         });
     }
 
-    public void addCollection(String username,String name, String lastName, String age
-    , String gender, String contactNum, String Address, String city, String zipcode, String birthDate
-    )
+    public void addCollection(String uid, String username,String name, String lastName, String age, String gender, String contactNum, String Address, String city, String zipcode, String birthDate)
     {
+
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         // Create a new user with a first and last name
         Map<String, Object> user = new HashMap<>();
+        user.put("uid", uid);  // Include the UID
         user.put("username", username);
         user.put("first name", name);
         user.put("last name", lastName);
@@ -134,23 +134,24 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
         // Add a new document with a generated ID
         db.collection("costumer")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                .document(uid)
+                .set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot added for UID: " + uid);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
+                        Log.w(TAG, "Error adding document for UID: " + uid, e);
                     }
                 });
 
     }
 
-    private void createAccount(String email, String password) {
+    private void createAccount(String email, String password, String username, String name, String lastName, String age, String gender, String contactNum, String address, String city, String zipcode, String birthDate) {
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -160,6 +161,9 @@ public class CreateAccountPage2 extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            String uid = user.getUid();
+                            addCollection(uid, username, name, lastName, age, gender, contactNum, address, city, zipcode, birthDate);
+
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -175,7 +179,8 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user)
     {
-        Intent intent = new Intent(CreateAccountPage2.this, LoginPage.class);
+        Intent intent = new Intent(CreateAccountPage2.this, HomePage.class);
+        intent.putExtra("user", user);
         //Add constructor to LoginBtn class to place infos
         startActivity(intent);
     }
