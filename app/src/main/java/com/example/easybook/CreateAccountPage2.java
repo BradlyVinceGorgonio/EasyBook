@@ -99,7 +99,6 @@ public class CreateAccountPage2 extends AppCompatActivity {
                     String zipcodeText = Zipcode.getText().toString().trim();
                     String birthDateText = birthDate.getText().toString().trim();
 
-
                     createAccount(email,password);
                     //Lagay mo sa DB lahat ng user credentials
                     addCollection(username, nameText, lastNameText, ageText, genderText, contactText,
