@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        FirebaseAuth.getInstance().signOut();
+
         emailLgn = (EditText) findViewById(R.id.emailLgn);
         passLgn = (EditText) findViewById(R.id.passwordLgn);
         loginBtn = (Button) findViewById(R.id.loginBtn);

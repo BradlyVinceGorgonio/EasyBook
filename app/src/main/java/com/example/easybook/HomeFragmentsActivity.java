@@ -18,7 +18,7 @@ public class HomeFragmentsActivity extends AppCompatActivity
     MailFragment mailFragment = new MailFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
-    FragmentValidate fragmentValidate = new FragmentValidate();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("MyApp", "Bago mag crash");
@@ -28,7 +28,7 @@ public class HomeFragmentsActivity extends AppCompatActivity
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         Log.d("MyApp", "getSupport");
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragmentValidate).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, homeFragment).commit();
 
 
         /*
@@ -47,7 +47,7 @@ public class HomeFragmentsActivity extends AppCompatActivity
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.homeButton) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragmentValidate).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, homeFragment).commit();
                     return true;
                 } else if (itemId == R.id.messageButton) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, chatFragment).commit();
