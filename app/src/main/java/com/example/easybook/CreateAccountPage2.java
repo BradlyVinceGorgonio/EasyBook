@@ -89,6 +89,15 @@ public class CreateAccountPage2 extends AppCompatActivity {
                     String email = intent.getStringExtra("email");
                     String password = intent.getStringExtra("password");
 
+                    String nameText = name.getText().toString().trim();
+                    String lastNameText = lastName.getText().toString().trim();
+                    String ageText = age.getText().toString().trim();
+                    String genderText = gender.getText().toString().trim();
+                    String contactText = contactNumber.getText().toString().trim();
+                    String addressText = address.getText().toString().trim();
+                    String cityText = city.getText().toString().trim();
+                    String zipcodeText = Zipcode.getText().toString().trim();
+                    String birthDateText = birthDate.getText().toString().trim();
 
 
                     createAccount(email,password);
