@@ -7,32 +7,32 @@ android {
     namespace 'com.example.easybook'
     compileSdk 33
 
+
     defaultConfig {
         applicationId "com.example.easybook"
         minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             minifyEnabled false
+
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-
-    buildFeatures {
-        viewBinding true
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-}
 
+
+}
 
 
 dependencies {
@@ -44,7 +44,7 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
 
     implementation 'com.google.firebase:firebase-database'
-    implementation 'com.google.firebase:f irebase-inappmessaging'
+    implementation 'com.google.firebase:firebase-inappmessaging'
     implementation 'com.google.firebase:firebase-inappmessaging-display'
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-auth'
