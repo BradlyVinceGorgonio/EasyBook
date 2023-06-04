@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.example.easybook.databinding.ActivityMainBinding;
+
 public class HomeFragmentsActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
