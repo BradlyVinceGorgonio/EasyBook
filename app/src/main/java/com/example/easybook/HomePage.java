@@ -33,7 +33,7 @@ public class HomePage extends AppCompatActivity {
     public void displayUser()
     {
 
-        displayName = (EditText) findViewById(R.id.welcomeUser);
+        //displayName = (EditText) findViewById(R.id.welcomeUser);
 
 
 

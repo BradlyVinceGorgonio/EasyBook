@@ -179,7 +179,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user)
     {
-        Intent intent = new Intent(CreateAccountPage2.this, HomePage.class);
+        Intent intent = new Intent(CreateAccountPage2.this, HomeFragmentsActivity.class);
         intent.putExtra("user", user);
         //Add constructor to LoginBtn class to place infos
         startActivity(intent);
@@ -196,7 +196,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
     private void reload()
     {
-        Intent intent = new Intent(CreateAccountPage2.this, LoginPage.class);
+        Intent intent = new Intent(CreateAccountPage2.this, HomeFragmentsActivity.class);
         startActivity(intent);
     }
 }

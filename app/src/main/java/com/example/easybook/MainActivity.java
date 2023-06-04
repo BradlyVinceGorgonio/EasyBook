@@ -93,9 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user)
     {
-        Intent intent = new Intent(MainActivity.this, HomePage.class);
-        //Add constructor to LoginBtn class to place infos
-        intent.putExtra("user", user);
+        Intent intent = new Intent(MainActivity.this, HomeFragmentsActivity.class);
         startActivity(intent);
     }
 
@@ -111,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void reload()
     {
-        Intent intent = new Intent(MainActivity.this, LoginPage.class);
+        Intent intent = new Intent(MainActivity.this, HomeFragmentsActivity.class);
         startActivity(intent);
     }
 }
