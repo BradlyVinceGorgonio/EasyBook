@@ -1,24 +1,41 @@
 package com.example.easybook;
 
-
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import com.google.android.material.badge.BadgeDrawable;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class HomeFragmentsActivity extends AppCompatActivity
 {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home_fragments);
 
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
     ChatFragment chatFragment = new ChatFragment();
@@ -39,30 +56,10 @@ public class HomeFragmentsActivity extends AppCompatActivity
 
 
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            private final Map<Integer, Fragment> fragmentMap = new HashMap<>();
-
-            {
-                fragmentMap.put(R.id.homeButton, homeFragment);
-                fragmentMap.put(R.id.messageButton, chatFragment);
-                fragmentMap.put(R.id.emailButton, mailFragment);
-                fragmentMap.put(R.id.profileButton, profileFragment);
-            }
-
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = fragmentMap.get(item.getItemId());
-                if (selectedFragment != null) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, selectedFragment).commit();
-                    return true;
-                }
-                return false;
-            }
-        });
 
 
 
-        /*
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -89,8 +86,3 @@ public class HomeFragmentsActivity extends AppCompatActivity
         });
         */
 
-
-
-
-    }
-}
