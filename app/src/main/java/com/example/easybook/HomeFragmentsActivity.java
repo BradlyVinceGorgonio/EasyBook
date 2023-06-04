@@ -1,68 +1,96 @@
 package com.example.easybook;
 
+
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.widget.FrameLayout;
+import android.view.MenuItem;
 
-import com.example.easybook.databinding.ActivityMainBinding;
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
-public class HomeFragmentsActivity extends AppCompatActivity {
-    private FrameLayout frameLayout;
-    private BottomNavigationView bottomNavigationView;
+import java.util.HashMap;
+import java.util.Map;
 
-    private HomeFragment homeFragment;
-    private ChatFragment chatFragment;
-    private MailFragment inboxFragment;
-    private ProfileFragment profileFragment;
+public class HomeFragmentsActivity extends AppCompatActivity
+{
 
+    BottomNavigationView bottomNavigationView;
+    HomeFragment homeFragment = new HomeFragment();
+    ChatFragment chatFragment = new ChatFragment();
+    MailFragment mailFragment = new MailFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_fragments);
 
-
-        frameLayout = findViewById(R.id.frame_layout);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        // Initialize fragments
-        homeFragment = new HomeFragment();
-        chatFragment = new ChatFragment();
-        inboxFragment = new MailFragment();
-        profileFragment = new ProfileFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, homeFragment).commit();
+
+        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.emailButton);
+        badgeDrawable.setVisible(true);
+        badgeDrawable.setNumber(3);
 
 
 
-        // Add the home fragment initially
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.frame_layout, homeFragment)
-                .commit();
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            private final Map<Integer, Fragment> fragmentMap = new HashMap<>();
 
-        // Set the listener for BottomNavigationView
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-
-            if (item.getItemId() == R.id.homeButton) {
-                selectedFragment = homeFragment;
-            } else if (item.getItemId() == R.id.messageButton) {
-                selectedFragment = chatFragment;
-            } else if (item.getItemId() == R.id.emailButton) {
-                selectedFragment = inboxFragment;
-            } else if (item.getItemId() == R.id.profileButton) {
-                selectedFragment = profileFragment;
+            {
+                fragmentMap.put(R.id.homeButton, homeFragment);
+                fragmentMap.put(R.id.messageButton, chatFragment);
+                fragmentMap.put(R.id.emailButton, mailFragment);
+                fragmentMap.put(R.id.profileButton, profileFragment);
             }
 
-            if (selectedFragment != null) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frame_layout, selectedFragment)
-                        .commit();
-                return true;
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = fragmentMap.get(item.getItemId());
+                if (selectedFragment != null) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, selectedFragment).commit();
+                    return true;
+                }
+                return false;
             }
-
-            return false;
         });
+
+
+
+        /*
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.homeButton:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,homeFragment).commit();
+                        return true;
+
+                    case R.id.messageButton:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,chatFragment).commit();
+                        return true;
+                    case R.id.emailButton:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,mailFragment).commit();
+                        return true;
+                    case R.id.profileButton:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,mailFragment).commit();
+                        return true;
+                }
+
+                return false;
+            }
+        });
+        */
+
+
+
+
     }
 }
