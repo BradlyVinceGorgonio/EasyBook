@@ -121,9 +121,9 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Cosmic Checklist"
-                                    android:textColor="#E7E7E7"
-                                    android:textSize="30dp"></TextView>
+                                    android:text="Fitness Instructor"
+                                    android:textColor="#000000"
+                                    android:textSize="25dp"></TextView>
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Ongoing task: 2 "
+                                    android:text=" "
                                     android:textColor="#E7E7E7"
                                     android:textSize="19dp"></TextView>
 
@@ -181,9 +181,9 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Baller Bootcamp"
-                                    android:textColor="#E7E7E7"
-                                    android:textSize="30dp"></TextView>
+                                    android:text="Gaming Instructor"
+                                    android:textColor="#000000"
+                                    android:textSize="25dp"></TextView>
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -192,7 +192,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Level Up Your Skills"
+                                    android:text=""
                                     android:textColor="#E7E7E7"
                                     android:textSize="19dp"></TextView>
 
@@ -241,9 +241,9 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="CustomFit"
-                                    android:textColor="#E7E7E7"
-                                    android:textSize="30dp"></TextView>
+                                    android:text="Sports Instructor"
+                                    android:textColor="#000000"
+                                    android:textSize="25dp"></TextView>
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -252,7 +252,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Tailor Your Training"
+                                    android:text=""
                                     android:textColor="#E7E7E7"
                                     android:textSize="19dp"></TextView>
 
@@ -302,9 +302,9 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Baller Bootcamp"
-                                    android:textColor="#E7E7E7"
-                                    android:textSize="30dp"></TextView>
+                                    android:text="Programming Instructor"
+                                    android:textColor="#000000"
+                                    android:textSize="25dp"></TextView>
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -313,7 +313,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Level Up Your Skills"
+                                    android:text=""
                                     android:textColor="#E7E7E7"
                                     android:textSize="19dp"></TextView>
 
@@ -361,9 +361,9 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Skill Tracker"
-                                    android:textColor="#E7E7E7"
-                                    android:textSize="30dp"></TextView>
+                                    android:text="Counseling Instructor"
+                                    android:textColor="#000000"
+                                    android:textSize="25dp"></TextView>
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -372,7 +372,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Measure Your Success"
+                                    android:text=""
                                     android:textColor="#E7E7E7"
 
                                     android:textSize="19dp"></TextView>
