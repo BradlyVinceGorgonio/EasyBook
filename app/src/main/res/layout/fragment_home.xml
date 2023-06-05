@@ -121,7 +121,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Cosmic Checklist"
+                                    android:text="Fitness"
                                     android:textColor="#E7E7E7"
                                     android:textSize="30dp"></TextView>
 
