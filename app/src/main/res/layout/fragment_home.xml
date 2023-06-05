@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/DisplayName"
+            android:id="@+id/displayUserName"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             app:cardCornerRadius="150dp"
@@ -44,7 +44,7 @@
                         android:shadowDx="-5"
                         android:shadowDy="-2"
                         android:shadowRadius="1"
-                        android:text="Welcome Back Kolas Markets!"
+                        android:text="Hi!, welcome "
                         android:textColor="#E7E7E7"
                         android:textSize="20dp"></TextView>
 
@@ -57,9 +57,9 @@
                         android:shadowDx="-5"
                         android:shadowDy="-2"
                         android:shadowRadius="1"
-                        android:text="Choose category below"
+                        android:text="Choose category below:"
                         android:textColor="#E7E7E7"
-                        android:textSize="15dp"></TextView>
+                        android:textSize="20dp"></TextView>
 
                 </LinearLayout>
 
@@ -84,7 +84,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/CosmicChecklist"
+                    android:id="@+id/FitnessCardView"
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
@@ -143,7 +143,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/BallerBootcamp"
+                    android:id="@+id/GamingCardView"
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
@@ -203,7 +203,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/SportsButton"
+                    android:id="@+id/SportsCardView"
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
@@ -251,6 +251,67 @@
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
                                     android:text="Tailor Your Training"
+                                    android:textColor="#E7E7E7"
+                                    android:textSize="19dp"></TextView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/codingCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="173dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="30dp"
+                    app:cardCornerRadius="8dp">
+
+                    <LinearLayout
+
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/programming"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="30dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:shadowColor="#000"
+                                    android:shadowDx="-5"
+                                    android:shadowDy="-2"
+                                    android:shadowRadius="1"
+                                    android:text="Baller Bootcamp"
+                                    android:textColor="#E7E7E7"
+                                    android:textSize="30dp"></TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:shadowColor="#000"
+                                    android:shadowDx="-5"
+                                    android:shadowDy="-2"
+                                    android:shadowRadius="1"
+                                    android:text="Level Up Your Skills"
                                     android:textColor="#E7E7E7"
                                     android:textSize="19dp"></TextView>
 
