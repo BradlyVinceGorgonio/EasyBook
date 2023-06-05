@@ -44,7 +44,7 @@ public class ProfileFragment extends Fragment {
             button.setText(name);
             button.setTextColor(Color.WHITE);
             button.setOnClickListener(v -> {
-                // Button click event handling
+                handleButtonClick(name);
             });
 
             llButtonsContainer.addView(button);
@@ -54,6 +54,7 @@ public class ProfileFragment extends Fragment {
             layoutParams.setMargins(10, 10, 10, 10); // Add margin between buttons
             button.setLayoutParams(layoutParams);
         }
+
 
         return view;
     }
