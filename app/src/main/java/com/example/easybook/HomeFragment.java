@@ -34,8 +34,62 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         // Inflate the layout for this fragment
+
+
+        CardView fitness = view.findViewById(R.id.FitnessCardView);
+        CardView gaming = view.findViewById(R.id.GamingCardView);
+        CardView sports = view.findViewById(R.id.SportsCardView);
+        CardView programming = view.findViewById(R.id.codingCardView);
         CardView council = view.findViewById(R.id.counselImageButton);
+
+
+        fitness.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        gaming.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+        sports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
         council.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        programming.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AllTrainersFragment fragment2 = new AllTrainersFragment();
@@ -50,20 +104,18 @@ public class HomeFragment extends Fragment {
 
 
 
-
         TextView displayUser = view.findViewById(R.id.displayUserName);
 
         mAuth = FirebaseAuth.getInstance();
         displayUserName(view);
+
+
 
         return view;
 
     }
     public void displayUserName(View view)
     {
-
-        //displayName = (EditText) findViewById(R.id.welcomeUser);
-
 
 
         TextView displayUser = view.findViewById(R.id.displayUserName);
@@ -81,8 +133,8 @@ public class HomeFragment extends Fragment {
                         String username = document.getString("username");
                         Log.d("TAG", "Name: " + username);
                         displayUser.setText("Welcome to Easy Booking " + username);
-
-                    } else {
+                    } else
+                    {
                         Log.d("TAG", "No such document");
                     }
                 } else {
@@ -90,9 +142,5 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
-
-
-
     }
 }
