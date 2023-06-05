@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.FrameLayout;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -17,6 +20,8 @@ public class HomeFragmentsActivity extends AppCompatActivity
     ChatFragment chatFragment = new ChatFragment();
     MailFragment mailFragment = new MailFragment();
     ProfileFragment profileFragment = new ProfileFragment();
+
+    AllTrainersFragment allTrainersFragment = new AllTrainersFragment();
 
 
     @Override
@@ -36,8 +41,6 @@ public class HomeFragmentsActivity extends AppCompatActivity
         badgeDrawable.setVisible(true);
         badgeDrawable.setNumber(3);
         */
-
-
 
 
         Log.d("MyApp", "Na mag crash");
