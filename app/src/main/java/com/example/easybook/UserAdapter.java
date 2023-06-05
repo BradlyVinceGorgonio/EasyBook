@@ -33,7 +33,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.TrainerViewHol
     public void onBindViewHolder(@NonNull TrainerViewHolder holder, int position) {
         TrainerClass trainer = trainerList.get(position);
         holder.trainerName.setText(trainer.getName());
+
         holder.trainerDescription.setText(trainer.getDescription());
+
+        holder.trainerSatisfiedUsers.setText(trainer.getSatisfiedUsers());
     }
 
     @Override
@@ -45,10 +48,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.TrainerViewHol
         TextView trainerName;
         TextView trainerDescription;
 
+        TextView trainerSatisfiedUsers;
+
         public TrainerViewHolder(View itemView) {
             super(itemView);
             trainerName = itemView.findViewById(R.id.trainerName);
             trainerDescription = itemView.findViewById(R.id.trainerDescription);
+            trainerSatisfiedUsers = itemView.findViewById(R.id.trainerSatisfiedUsers);
         }
     }
 }

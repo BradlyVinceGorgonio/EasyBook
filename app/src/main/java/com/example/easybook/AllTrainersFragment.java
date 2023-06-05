@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -41,6 +42,7 @@ public class AllTrainersFragment extends Fragment {
     private void fetchDataFromFirestore() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("trainer")
+                .orderBy("satisfied_users", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -49,7 +51,16 @@ public class AllTrainersFragment extends Fragment {
                             String name = document.getString("name");
                             String description = document.getString("description");
 
-                            TrainerClass trainer = new TrainerClass(name, description);
+                            // Check if "satisfied_users" field exists and has a valid value
+                            long satisfiedUsers = 0; // Default value if field is missing or null
+                            if (document.contains("satisfied_users")) {
+                                Object value = document.get("satisfied_users");
+                                if (value instanceof Long) {
+                                    satisfiedUsers = (long) value;
+                                }
+                            }
+
+                            TrainerClass trainer = new TrainerClass(name, "Satisfied Clients: " + satisfiedUsers, description);
                             trainerList.add(trainer);
                         }
                         trainerAdapter.notifyDataSetChanged();
@@ -58,4 +69,7 @@ public class AllTrainersFragment extends Fragment {
                     }
                 });
     }
+
+
+
 }

@@ -31,6 +31,18 @@
             />
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verified"
+            android:textColor="#00ACEE"/>
+        <TextView
+            android:layout_marginTop="5sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/trainerSatisfiedUsers"
+            android:text="Satisfied Clients:"
+            android:textSize="14dp"/>
+        <TextView
             android:id="@+id/trainerDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
