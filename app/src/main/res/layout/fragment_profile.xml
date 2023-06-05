@@ -7,24 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <Button
-            android:id="@+id/signOut"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/llButtonsContainer"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="154dp"
-            android:layout_marginTop="256dp"
-            android:layout_marginEnd="167dp"
-            android:layout_marginBottom="427dp"
-            android:text="Log out"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="@android:color/darker_gray"
+            android:orientation="vertical">
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>
