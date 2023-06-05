@@ -2,6 +2,7 @@ package com.example.easybook;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -20,8 +21,8 @@ public class HomeFragment extends Fragment {
     {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         // Inflate the layout for this fragment
-        ImageButton button = view.findViewById(R.id.counselImageButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        CardView council = view.findViewById(R.id.counselImageButton);
+        council.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AllTrainersFragment fragment2 = new AllTrainersFragment();
