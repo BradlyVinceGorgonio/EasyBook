@@ -1,25 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="#3D5AFE"
     tools:context=".ChatFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="171dp"
-            android:layout_marginBottom="541dp"
-            android:text="Coming Soon!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/layoutSend"
+        android:layout_width="400dp"
+        android:layout_height="721dp"
+        android:background="#3D5AFE"
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+        android:layout-marginEnd="16sdp"
+        android:src="@drawable/background_chat_input"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+
+            android:layout_width="61dp"
+            android:layout_height="68dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="650dp"
+            android:background="#3D5AFE"
+            android:padding="8dp"
+            android:src="@drawable/round_send_24"
+
+            app:tint="@color/black" />
+
+        <EditText
+            android:layout_width="301dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="650dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="700dp"
+            android:layout_marginBottom="12dp"
+            android:background="#D3D3D3"
+            android:hint="type_a_message"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toBottomOF="parent"
+            app:layout_constraintEnd_toStartOf="@id/layoutSend"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBack"
+            android:layout_width="405dp"
+            android:layout_height="590dp"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginRight="5dp"
+            android:background="#3D5AFE"
+            android:padding="5dp"
+            android:src="@drawable/background_content_top"
+            app:layout_marginLeft="16dp"
+            app:layout_marginStart="16dp"
+            app:layout_marginTop="12dp" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageback"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
