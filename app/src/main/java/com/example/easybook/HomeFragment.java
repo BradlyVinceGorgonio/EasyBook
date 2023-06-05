@@ -33,8 +33,6 @@ public class HomeFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
-
         return view;
 
     }

@@ -43,7 +43,7 @@ public class ProfileFragment extends Fragment {
             ));
             button.setText(name);
             button.setTextColor(Color.WHITE);
-            button.setOnClickListener(v -> {
+            button.setOnClickListener(v -> {//
                 handleButtonClick(name);
             });
 
