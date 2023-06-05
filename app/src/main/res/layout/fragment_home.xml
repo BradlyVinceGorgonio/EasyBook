@@ -121,7 +121,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Fitness Instructor"
+                                    android:text="Fitness Trainer"
                                     android:textColor="#000000"
                                     android:textSize="25dp"></TextView>
 
@@ -132,8 +132,8 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text=" "
-                                    android:textColor="#E7E7E7"
+                                    android:text="Find Your Perfect Fit"
+                                    android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
 
                             </LinearLayout>
@@ -181,7 +181,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Gaming Instructor"
+                                    android:text="Gaming Specialist"
                                     android:textColor="#000000"
                                     android:textSize="25dp"></TextView>
 
@@ -193,7 +193,7 @@
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
                                     android:text=""
-                                    android:textColor="#E7E7E7"
+                                    android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
 
                             </LinearLayout>
@@ -253,7 +253,7 @@
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
                                     android:text=""
-                                    android:textColor="#E7E7E7"
+                                    android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
 
                             </LinearLayout>
@@ -302,7 +302,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Programming Instructor"
+                                    android:text="Programming Tutor"
                                     android:textColor="#000000"
                                     android:textSize="25dp"></TextView>
 
@@ -314,7 +314,7 @@
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
                                     android:text=""
-                                    android:textColor="#E7E7E7"
+                                    android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
 
                             </LinearLayout>
@@ -361,7 +361,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Counseling Instructor"
+                                    android:text="Guidance Counselor"
                                     android:textColor="#000000"
                                     android:textSize="25dp"></TextView>
 
@@ -373,7 +373,7 @@
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
                                     android:text=""
-                                    android:textColor="#E7E7E7"
+                                    android:textColor="#C0C0C0"
 
                                     android:textSize="19dp"></TextView>
 
