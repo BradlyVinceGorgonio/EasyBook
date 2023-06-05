@@ -192,7 +192,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text=""
+                                    android:text="."
                                     android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
 
@@ -252,7 +252,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text=""
+                                    android:text="."
                                     android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
 
@@ -313,7 +313,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text=""
+                                    android:text="."
                                     android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
 
@@ -372,7 +372,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text=""
+                                    android:text="."
                                     android:textColor="#C0C0C0"
 
                                     android:textSize="19dp"></TextView>
