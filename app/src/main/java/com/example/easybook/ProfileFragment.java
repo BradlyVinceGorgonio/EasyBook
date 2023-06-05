@@ -1,16 +1,21 @@
 package com.example.easybook;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.easybook.MainActivity;
 import com.example.easybook.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -20,7 +25,6 @@ public class ProfileFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         llButtonsContainer = view.findViewById(R.id.llButtonsContainer);
@@ -36,67 +40,64 @@ public class ProfileFragment extends Fragment {
         };
 
         for (String name : buttonNames) {
-            Button button = new Button(requireContext()); // Use requireContext() instead of 'this'
+            Button button = new Button(requireContext());
             button.setLayoutParams(new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
             ));
             button.setText(name);
-            button.setTextColor(Color.WHITE);
-            button.setOnClickListener(v -> {//
-                handleButtonClick(name);
-            });
+            button.setTextSize(20);
+            button.setTextColor(Color.BLACK);
+            button.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_right_arrow, 0);
+            button.setCompoundDrawablePadding(10);
+            button.setBackgroundColor(Color.WHITE);
+            button.setOnClickListener(v -> handleButtonClick(name));
 
             llButtonsContainer.addView(button);
 
             LinearLayout.LayoutParams layoutParams =
                     (LinearLayout.LayoutParams) button.getLayoutParams();
-            layoutParams.setMargins(10, 10, 10, 10); // Add margin between buttons
+            layoutParams.setMargins(0, 10, 0, 10);
             button.setLayoutParams(layoutParams);
         }
-
 
         return view;
     }
 
     private void handleButtonClick(String buttonName) {
-        Fragment fragment = null; // Initialize with a default value
+        Fragment fragment = null;
 
-        // Create the appropriate fragment based on the button clicked
         switch (buttonName) {
             case "User Settings":
-                //fragment = new UserSettingsFragment();
+                // fragment = new UserSettingsFragment();
                 break;
             case "Membership":
-                //fragment = new MembershipFragment();
+                // fragment = new MembershipFragment();
                 break;
             case "Terms and Conditions":
-                //fragment = new TermsAndConditionsFragment();
+                // fragment = new TermsAndConditionsFragment();
                 break;
             case "Contact Us":
-                //fragment = new ContactUsFragment();
+                // fragment = new ContactUsFragment();
                 break;
             case "Apply as a Customer Trainer":
                 fragment = new ApplyAsCostumerTrainerFragment();
                 break;
             case "Change Password":
-                //fragment = new ChangePasswordFragment();
+                // fragment = new ChangePasswordFragment();
                 break;
             case "Logout":
-                // Perform logout action
                 logout();
                 return;
             default:
-                // Handle the case where no fragment is selected
                 return;
         }
 
         FragmentTransaction transaction = requireFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, fragment);
-        transaction.addToBackStack(null); // Add to back stack if needed
+        transaction.addToBackStack(null);
         transaction.commit();
     }
-
 
     private void logout() {
         FirebaseAuth.getInstance().signOut();
