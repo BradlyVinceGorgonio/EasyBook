@@ -42,13 +42,15 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
     }
     @Override
     public void onItemClick(TrainerClass trainer) {
-        TrainerDescriptionFragment trainerDescriptionFragment = new TrainerDescriptionFragment();
+        String trainerId = trainer.getUid(); // Assuming TrainerClass has a getId() method to retrieve the document ID
+        TrainerDescriptionFragment trainerDescriptionFragment = TrainerDescriptionFragment.newInstance(trainerId);
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, trainerDescriptionFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
 
     private void fetchDataFromFirestore() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -61,6 +63,7 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             String name = document.getString("name");
                             String description = document.getString("description");
+                            String uid = document.getString("uid");
 
                             // Check if "satisfied_users" field exists and has a valid value
                             long satisfiedUsers = 0; // Default value if field is missing or null
@@ -71,7 +74,7 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
                                 }
                             }
 
-                            TrainerClass trainer = new TrainerClass(name, "Satisfied Clients: " + satisfiedUsers, description);
+                            TrainerClass trainer = new TrainerClass(name, "Satisfied Clients: " + satisfiedUsers, description, uid);
                             trainerList.add(trainer);
                         }
                         trainerAdapter.notifyDataSetChanged();
