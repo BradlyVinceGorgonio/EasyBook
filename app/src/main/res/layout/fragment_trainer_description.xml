@@ -14,17 +14,21 @@
         android:background="@color/cardview_dark_background"
         android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="415dp"
             android:layout_height="170dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/userImg"
+                android:background="@drawable/personvector"
                 android:layout_width="129dp"
                 android:layout_height="149dp"
                 app:layout_constraintBottom_toBottomOf="parent"
