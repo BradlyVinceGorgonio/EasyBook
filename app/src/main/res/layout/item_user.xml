@@ -1,55 +1,61 @@
 <!-- item_user.xml -->
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLayout"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:layout_marginTop="10sp"
-    android:layout_marginBottom="10sp"
-    android:orientation="horizontal"
-    >
-
-    <ImageView
-        android:id="@+id/profileImage"
-
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/personvector"
-        />
+    android:layout_marginBottom="10sp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/trainerName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="Name"
+        <ImageView
+            android:id="@+id/profileImage"
+
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/personvector"
             />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Verified"
-            android:textColor="#00ACEE"/>
-        <TextView
-            android:layout_marginTop="5sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/trainerSatisfiedUsers"
-            android:text="Satisfied Clients:"
-            android:textSize="14dp"/>
-        <TextView
-            android:id="@+id/trainerDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Not yet verified \nSatisfied Clients: \nFitness Expert"
-            android:textSize="14sp"
-            />
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/trainerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Name"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Verified"
+                android:textColor="#00ACEE"/>
+            <TextView
+                android:layout_marginTop="5sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/trainerSatisfiedUsers"
+                android:text="Satisfied Clients:"
+                android:textSize="14dp"/>
+            <TextView
+                android:id="@+id/trainerDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Not yet verified \nSatisfied Clients: \nFitness Expert"
+                android:textSize="14sp"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

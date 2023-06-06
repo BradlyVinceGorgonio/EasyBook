@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +19,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllTrainersFragment extends Fragment {
+public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemClickListener {
 
     private List<TrainerClass> trainerList;
     private UserAdapter trainerAdapter;
@@ -30,13 +32,22 @@ public class AllTrainersFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         trainerList = new ArrayList<>();
-        trainerAdapter = new UserAdapter(getContext(), trainerList);
+        trainerAdapter = new UserAdapter(getContext(), trainerList, this);
         recyclerView.setAdapter(trainerAdapter);
 
         // Fetch data from Firestore
         fetchDataFromFirestore();
 
         return view;
+    }
+    @Override
+    public void onItemClick(TrainerClass trainer) {
+        TrainerDescriptionFragment trainerDescriptionFragment = new TrainerDescriptionFragment();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, trainerDescriptionFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
     private void fetchDataFromFirestore() {
