@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="320dp"
             android:layout_height="50dp"
-            android:text="Terms and Conditions"
+            android:text="Terms &amp; Conditions"
             android:textColor="@color/white"
             android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"
