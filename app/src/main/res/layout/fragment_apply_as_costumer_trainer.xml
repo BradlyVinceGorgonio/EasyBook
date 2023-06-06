@@ -20,9 +20,9 @@
         <TextView
             android:layout_width="320dp"
             android:layout_height="50dp"
-            android:text="Terms & Conditions"
+            android:text="Terms and Conditions"
             android:textColor="@color/white"
-            android:textSize="34sp"
+            android:textSize="32sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.175"
@@ -46,7 +46,6 @@
             android:id="@+id/scrollView3"
             android:layout_width="383dp"
             android:layout_height="451dp"
-            android:background="@c"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,8 +92,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
 
-    </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
