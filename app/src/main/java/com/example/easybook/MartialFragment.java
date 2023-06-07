@@ -2,63 +2,99 @@ package com.example.easybook;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MartialFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class MartialFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public MartialFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MartialFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MartialFragment newInstance(String param1, String param2) {
-        MartialFragment fragment = new MartialFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private List<TrainerClass> trainerList;
+    private UserAdapter trainerAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_martial, container, false);
+        View view = inflater.inflate(R.layout.fragment_martial, container, false);
+
+        CardView judo = view.findViewById(R.id.JudoIns);
+        CardView karate = view.findViewById(R.id.KarateIns);
+        CardView taekwondo = view.findViewById(R.id.TaekwondoIns);
+        CardView boxing = view.findViewById(R.id.BoxingIns);
+
+        judo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //AllTrainersFragment
+                MartialFragment fragment2 = new MartialFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+
+        karate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FitnessFragment fragment2 = new FitnessFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        taekwondo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SportsFragment fragment2 = new SportsFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+
+
+
+        boxing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DanceFragment fragment2 = new DanceFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+
+
+
+        return view;
     }
+
+
 }

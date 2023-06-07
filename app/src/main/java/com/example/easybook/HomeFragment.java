@@ -41,6 +41,18 @@ public class HomeFragment extends Fragment {
         CardView sports = view.findViewById(R.id.SportsCardView);
         CardView dancing = view.findViewById(R.id.DanceCardView);
 
+        martial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MartialFragment fragment2 = new MartialFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment2);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
 
         fitness.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,17 +77,9 @@ public class HomeFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        martial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MartialFragment fragment2 = new MartialFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout, fragment2);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
+
+
+
 
         dancing.setOnClickListener(new View.OnClickListener() {
             @Override
