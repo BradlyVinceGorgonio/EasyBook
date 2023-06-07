@@ -66,15 +66,15 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
                             String uid = document.getString("uid");
 
                             // Check if "satisfied_users" field exists and has a valid value
-                            long satisfiedUsers = 0; // Default value if field is missing or null
-                            if (document.contains("satisfied_users")) {
-                                Object value = document.get("satisfied_users");
+                            long price = 0; // Default value if field is missing or null
+                            if (document.contains("price")) {
+                                Object value = document.get("price");
                                 if (value instanceof Long) {
-                                    satisfiedUsers = (long) value;
+                                    price = (long) value;
                                 }
                             }
 
-                            TrainerClass trainer = new TrainerClass(name, "Satisfied Clients: " + satisfiedUsers, description, uid);
+                            TrainerClass trainer = new TrainerClass(name, "Price per session: P" + price, description, uid);
                             trainerList.add(trainer);
                         }
                         trainerAdapter.notifyDataSetChanged();

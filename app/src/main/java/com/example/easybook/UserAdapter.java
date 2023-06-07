@@ -41,7 +41,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.TrainerViewHol
         TrainerClass trainer = trainerList.get(position);
         holder.trainerName.setText(trainer.getName());
         holder.trainerDescription.setText(trainer.getDescription());
-        holder.trainerSatisfiedUsers.setText(trainer.getSatisfiedUsers());
+        holder.trainerPrice.setText(trainer.getSatisfiedUsers());
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,14 +61,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.TrainerViewHol
     public static class TrainerViewHolder extends RecyclerView.ViewHolder {
         TextView trainerName;
         TextView trainerDescription;
-        TextView trainerSatisfiedUsers;
+        TextView trainerPrice;
         CardView cardView;
 
         public TrainerViewHolder(View itemView) {
             super(itemView);
             trainerName = itemView.findViewById(R.id.trainerName);
             trainerDescription = itemView.findViewById(R.id.trainerDescription);
-            trainerSatisfiedUsers = itemView.findViewById(R.id.trainerSatisfiedUsers);
+            trainerPrice = itemView.findViewById(R.id.trainerPrice);
             cardView = itemView.findViewById(R.id.itemLayout);
         }
     }

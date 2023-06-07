@@ -43,8 +43,8 @@
                 android:layout_marginTop="5sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/trainerSatisfiedUsers"
-                android:text="Satisfied Clients:"
+                android:id="@+id/trainerPrice"
+                android:text="Price per session: P"
                 android:textSize="14dp"/>
             <TextView
                 android:id="@+id/trainerDescription"
