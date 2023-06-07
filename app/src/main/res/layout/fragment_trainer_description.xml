@@ -63,14 +63,16 @@
         android:text=" Satisfied Clients:"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/category"
-        android:layout_width="204dp"
-        android:layout_height="40dp"
+        android:layout_width="199dp"
+        android:layout_height="79dp"
         android:background="@color/white"
         android:text=" Category:"
         android:textSize="22sp"
@@ -143,17 +145,17 @@
         android:layout_height="31dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
-        android:text=" BirthDay: "
+        android:text="Price:"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/userBirthday"
+        app:layout_constraintEnd_toStartOf="@+id/userPrice"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/userBirthday"
+        android:id="@+id/userPrice"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_marginTop="3dp"
@@ -173,17 +175,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="1dp"
-        android:text=" Gender:  "
+        android:text="Fields:"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/userGender"
+        app:layout_constraintEnd_toStartOf="@+id/category_fieldsTV"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:layout_constraintVertical_bias="0.007" />
 
     <TextView
-        android:id="@+id/userGender"
+        android:id="@+id/category_fieldsTV"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_marginStart="1dp"
@@ -211,7 +213,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userGender"
+        app:layout_constraintTop_toBottomOf="@+id/category_fieldsTV"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -271,21 +273,18 @@
 
     <Button
         android:id="@+id/booknowBtn"
-        android:layout_width="164dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="125dp"
+        android:layout_width="254dp"
+        android:layout_height="66dp"
         android:backgroundTint="@color/black"
         android:text="Book Now"
         android:textColor="@color/white"
-        android:textSize="24dp"
+        android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/availabledates"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.467" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

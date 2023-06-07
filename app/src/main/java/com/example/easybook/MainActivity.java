@@ -18,6 +18,9 @@ import com.google.firebase.auth.AuthResult;
 import static com.google.firebase.inappmessaging.internal.Logging.TAG;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void signIn(String email, String password) {
-        // [START sign_in_with_email]
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -78,24 +80,49 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            checkIfUserIsTrainer(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-
                         }
                     }
                 });
-        // [END sign_in_with_email]
     }
 
-    private void updateUI(FirebaseUser user)
-    {
-        Intent intent = new Intent(MainActivity.this, HomeFragmentsActivity.class);
-        startActivity(intent);
+    private void checkIfUserIsTrainer(FirebaseUser user) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference trainersCollection = db.collection("trainer");
+
+        trainersCollection.whereEqualTo("uid", user.getUid())
+                .limit(1)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful())
+                        {
+                            boolean isTrainer = !task.getResult().isEmpty();
+                            if (isTrainer) {
+                                Intent intent = new Intent(MainActivity.this, TrainerHomeFragmentsActivity.class);
+                                startActivity(intent);
+                            }
+                            else
+                            {
+                                Intent intent = new Intent(MainActivity.this, HomeFragmentsActivity.class);
+                                startActivity(intent);
+                            }
+                        }
+                        else
+                        {
+                            // Error occurred while checking if user is a trainer
+                            Log.w(TAG, "Error checking if user is a trainer", task.getException());
+                        }
+                    }
+                });
     }
+
 
     @Override
     public void onStart() {
@@ -109,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void reload()
     {
-        Intent intent = new Intent(MainActivity.this, HomeFragmentsActivity.class);
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
