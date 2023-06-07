@@ -37,16 +37,15 @@ public class HomeFragment extends Fragment {
 
 
         CardView fitness = view.findViewById(R.id.FitnessCardView);
-        CardView gaming = view.findViewById(R.id.GamingCardView);
+        CardView martial = view.findViewById(R.id.MartialArtsCardView);
         CardView sports = view.findViewById(R.id.SportsCardView);
-        CardView programming = view.findViewById(R.id.codingCardView);
-        CardView council = view.findViewById(R.id.counselImageButton);
+        CardView dancing = view.findViewById(R.id.DanceCardView);
 
 
         fitness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                FitnessFragment fragment2 = new FitnessFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);
@@ -55,21 +54,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        gaming.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AllTrainersFragment fragment2 = new AllTrainersFragment();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout, fragment2);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
         sports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                SportsFragment fragment2 = new SportsFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);
@@ -77,10 +65,10 @@ public class HomeFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        council.setOnClickListener(new View.OnClickListener() {
+        martial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                MartialFragment fragment2 = new MartialFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);
@@ -89,10 +77,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        programming.setOnClickListener(new View.OnClickListener() {
+        dancing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                DanceFragment fragment2 = new DanceFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);
