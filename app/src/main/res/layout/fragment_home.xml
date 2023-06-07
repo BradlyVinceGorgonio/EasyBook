@@ -86,7 +86,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/FitnessCardView"
+                    android:id="@+id/MartialArtsCardView"
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
@@ -121,7 +121,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Fitness Trainer"
+                                    android:text="Martial Arts Instructor"
                                     android:textColor="#000000"
                                     android:textSize="25dp"></TextView>
 
@@ -145,7 +145,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/GamingCardView"
+                    android:id="@+id/FitnessCardView"
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
@@ -158,7 +158,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/game"
+                        android:background="@drawable/fitness"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -181,7 +181,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Gaming Specialist"
+                                    android:text="Fitness Trainer"
                                     android:textColor="#000000"
                                     android:textSize="25dp"></TextView>
 
@@ -266,7 +266,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/codingCardView"
+                    android:id="@+id/DanceCardView"
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
@@ -279,7 +279,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/program"
+                        android:background="@drawable/fitness"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -302,7 +302,7 @@
                                     android:shadowDx="-5"
                                     android:shadowDy="-2"
                                     android:shadowRadius="1"
-                                    android:text="Programming Tutor"
+                                    android:text="Dance tutor"
                                     android:textColor="#000000"
                                     android:textSize="25dp"></TextView>
 
@@ -325,65 +325,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/counselImageButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="173dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginRight="30dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/counseling"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="30dp"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="Guidance Counselor"
-                                    android:textColor="#000000"
-                                    android:textSize="25dp"></TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="."
-                                    android:textColor="#C0C0C0"
-
-                                    android:textSize="19dp"></TextView>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+               
 
             </LinearLayout>
         </ScrollView>
