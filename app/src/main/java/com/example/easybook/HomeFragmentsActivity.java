@@ -21,7 +21,6 @@ public class HomeFragmentsActivity extends AppCompatActivity
     MailFragment mailFragment = new MailFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
-    AllTrainersFragment allTrainersFragment = new AllTrainersFragment();
 
 
     @Override

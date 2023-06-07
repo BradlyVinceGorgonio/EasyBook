@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void reload()
     {
-        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        Intent intent = new Intent(MainActivity.this,HomeFragmentsActivity.class);
         startActivity(intent);
     }
 }

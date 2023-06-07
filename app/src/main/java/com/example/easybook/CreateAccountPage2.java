@@ -56,6 +56,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
         String nameText = name.getText().toString().trim();
         String lastNameText = lastName.getText().toString().trim();
+        String fullname = nameText + " " + lastNameText;
         String ageText = age.getText().toString().trim();
         String genderText = gender.getText().toString().trim();
         String contactText = contactNumber.getText().toString().trim();
@@ -91,6 +92,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
                     String nameText = name.getText().toString().trim();
                     String lastNameText = lastName.getText().toString().trim();
+                    String fullname = nameText + " " + lastNameText;
                     String ageText = age.getText().toString().trim();
                     String genderText = gender.getText().toString().trim();
                     String contactText = contactNumber.getText().toString().trim();
@@ -99,7 +101,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
                     String zipcodeText = Zipcode.getText().toString().trim();
                     String birthDateText = birthDate.getText().toString().trim();
 
-                    createAccount(email, password, username, nameText, lastNameText, ageText, genderText, contactText,
+                    createAccount(email, password, username, nameText, lastNameText, fullname, ageText, genderText, contactText,
                             addressText, cityText, zipcodeText, birthDateText);
                     //Lagay mo sa DB lahat ng user credentials
 
@@ -111,7 +113,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
         });
     }
 
-    public void addCollection(String uid, String username,String name, String lastName, String age, String gender, String contactNum, String Address, String city, String zipcode, String birthDate)
+    public void addCollection(String uid, String username,String name, String lastName, String fullname, String age, String gender, String contactNum, String Address, String city, String zipcode, String birthDate)
     {
 
 
@@ -122,6 +124,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
         user.put("username", username);
         user.put("first name", name);
         user.put("last name", lastName);
+        user.put("name", fullname);
         user.put("age", age);
         user.put("gender", gender);
         user.put("contact number", contactNum);
@@ -151,7 +154,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
     }
 
-    private void createAccount(String email, String password, String username, String name, String lastName, String age, String gender, String contactNum, String address, String city, String zipcode, String birthDate) {
+    private void createAccount(String email, String password, String username, String Fname, String lastName, String fullname, String age, String gender, String contactNum, String address, String city, String zipcode, String birthDate) {
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -162,7 +165,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             String uid = user.getUid();
-                            addCollection(uid, username, name, lastName, age, gender, contactNum, address, city, zipcode, birthDate);
+                            addCollection(uid, username, Fname, lastName, fullname, age, gender, contactNum, address, city, zipcode, birthDate);
 
                             updateUI(user);
                         } else {
