@@ -35,16 +35,16 @@ public class TrainerHomeFragmentsActivity extends AppCompatActivity
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
 
-                if (itemId == R.id.homeButton) {
+                if (itemId == R.id.homeButtonTrainer) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.trainer_frame_layout, trainerHomeFragment).commit();
                     return true;
-                } else if (itemId == R.id.messageButton) {
+                } else if (itemId == R.id.messageButtonTrainer) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.trainer_frame_layout, trainerChatFragment).commit();
                     return true;
-                } else if (itemId == R.id.emailButton) {
+                } else if (itemId == R.id.emailButtonTrainer) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.trainer_frame_layout, mailFragment).commit();
                     return true;
-                } else if (itemId == R.id.profileButton) {
+                } else if (itemId == R.id.profileButtonTrainer) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.trainer_frame_layout, profileFragment).commit();
                     return true;
                 }
@@ -53,6 +53,6 @@ public class TrainerHomeFragmentsActivity extends AppCompatActivity
         });
 
 
-        FirebaseAuth.getInstance().signOut();
+        //FirebaseAuth.getInstance().signOut();
     }
 }
