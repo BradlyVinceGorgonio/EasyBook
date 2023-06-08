@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemClickListener {
-
+//v
     private List<TrainerClass> trainerList;
     private UserAdapter trainerAdapter;
 
