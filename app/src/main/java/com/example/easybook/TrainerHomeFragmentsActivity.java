@@ -28,7 +28,7 @@ public class TrainerHomeFragmentsActivity extends AppCompatActivity
 
         bottomNavigationView = findViewById(R.id.trainerBottomNavigationView);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, trainerHomeFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.trainer_frame_layout, trainerHomeFragment).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

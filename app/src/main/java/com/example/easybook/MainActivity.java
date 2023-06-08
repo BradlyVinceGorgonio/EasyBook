@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    public static int check = 1;
     private void checkIfUserIsTrainer(FirebaseUser user) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference trainersCollection = db.collection("trainer");
@@ -106,13 +105,11 @@ public class MainActivity extends AppCompatActivity {
                         {
                             boolean isTrainer = !task.getResult().isEmpty();
                             if (isTrainer) {
-                                check = 2;
                                 Intent intent = new Intent(MainActivity.this, TrainerHomeFragmentsActivity.class);
                                 startActivity(intent);
                             }
                             else
                             {
-                                check = 3;
                                 Intent intent = new Intent(MainActivity.this, HomeFragmentsActivity.class);
                                 startActivity(intent);
                             }
@@ -137,19 +134,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void reload()
-    {
-        if (check == 2) // Trainer
-        {
-            Intent intent = new Intent(MainActivity.this,HomeFragmentsActivity.class);
-            startActivity(intent);
-
-        }
-        else
-        {
-            Intent intent = new Intent(MainActivity.this, HomeFragmentsActivity.class);
-            startActivity(intent);
-
+    private void reload() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            checkIfUserIsTrainer(currentUser);
         }
     }
+
 }
