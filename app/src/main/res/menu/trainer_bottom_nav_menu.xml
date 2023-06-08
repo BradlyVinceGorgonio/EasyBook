@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Home"
-        android:icon="@drawable/homevector"
+        android:icon="@drawable/bookvector"
         android:id="@+id/homeButtonTrainer" />
 
     <item android:title="Chat"

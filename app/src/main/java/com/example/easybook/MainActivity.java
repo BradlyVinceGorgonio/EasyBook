@@ -138,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             checkIfUserIsTrainer(currentUser);
+            //Intent intent = new Intent(MainActivity.this, TrainerHomeFragmentsActivity.class);
+            //startActivity(intent);
         }
     }
 
