@@ -35,8 +35,15 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
         trainerAdapter = new UserAdapter(getContext(), trainerList, this);
         recyclerView.setAdapter(trainerAdapter);
 
+        Bundle args = getArguments();
+        if (args != null) {
+            String selectedSport = args.getString("selectedSport");
+            // Use the selectedSport string as needed
+            fetchDataFromFirestore(selectedSport);
+        }
+
         // Fetch data from Firestore
-        fetchDataFromFirestore();
+
 
         return view;
     }
@@ -52,10 +59,11 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
     }
 
 
-    private void fetchDataFromFirestore() {
+    private void fetchDataFromFirestore(String field) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("trainer")
-                .orderBy("satisfied_users", Query.Direction.DESCENDING)
+                .whereArrayContains("category_field", field)
+                //.orderBy("satisfied_users", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -83,6 +91,7 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
                     }
                 });
     }
+
 
 
 

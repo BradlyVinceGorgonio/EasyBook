@@ -4,13 +4,17 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.List;
 
 public class TrainerDescriptionFragment extends Fragment
 {
@@ -41,12 +45,43 @@ public class TrainerDescriptionFragment extends Fragment
                             // Retrieve the user's fields from the document
                             String name = document.getString("name");
                             String description = document.getString("description");
+                            String category = document.getString("category");
+                            long price = 0; // Default value if field is missing or null
+                            Object value = document.get("price");
+                            if (value instanceof Long) {
+                                price = (long) value;
+                            }
+                            long satisfied = 0;
+                            Object value1 = document.get("satisfied_users");
+                            if (value instanceof Long) {
+                                satisfied = (long) value1;
+                            }
+                            String satisfiedString = Long.toString(satisfied);
+                            String priceString = Long.toString(price);
+
+                            //Display array of category fields
+                            List<String> categoryFields = (List<String>) document.get("category_field");
+                            String categoryFieldsString = TextUtils.join(", ", categoryFields);
                             // Display the retrieved data in your UI elements
                             // For example, set the text of TextViews
 
                             // Example:
                             TextView nameTextView = getView().findViewById(R.id.userName);
+                            TextView descriptionTextView = getView().findViewById(R.id.description);
+                            TextView categoryTV = getView().findViewById(R.id.category);
+                            TextView category_fieldsTV= getView().findViewById(R.id.category_fieldsTV);
+                            TextView priceTV = getView().findViewById(R.id.userPrice);
+                            TextView satisfiedTV = getView().findViewById(R.id.satisfiedclients);
+                            Button booknow = getView().findViewById(R.id.booknowBtn);
+
+                            booknow.setText("Book now for " + priceString+"php");
                             nameTextView.setText(name);
+                            descriptionTextView.setText(description);
+                            categoryTV.setText(category);
+                            //Category Fix
+                            category_fieldsTV.setText(categoryFieldsString);
+                            priceTV.setText(priceString + "php");
+                            satisfiedTV.setText("Satisfied Clients: "+satisfiedString);
 
                             // Repeat the above step for other fields
 

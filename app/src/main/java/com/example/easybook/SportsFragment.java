@@ -29,7 +29,11 @@ public class SportsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //AllTrainersFragment
-                MartialFragment fragment2 = new MartialFragment();
+                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                String selectedSport = "basketball";
+                Bundle args = new Bundle();
+                args.putString("selectedSport", selectedSport);
+                fragment2.setArguments(args);
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);
@@ -42,7 +46,11 @@ public class SportsFragment extends Fragment {
         badminton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FitnessFragment fragment2 = new FitnessFragment();
+                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                String selectedSport = "badminton";
+                Bundle args = new Bundle();
+                args.putString("selectedSport", selectedSport);
+                fragment2.setArguments(args);
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);
@@ -54,7 +62,11 @@ public class SportsFragment extends Fragment {
         swimming.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SportsFragment fragment2 = new SportsFragment();
+                AllTrainersFragment fragment2 = new AllTrainersFragment();
+                String selectedSport = "swimming";
+                Bundle args = new Bundle();
+                args.putString("selectedSport", selectedSport);
+                fragment2.setArguments(args);
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);
@@ -69,7 +81,7 @@ public class SportsFragment extends Fragment {
         volleyball.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DanceFragment fragment2 = new DanceFragment();
+                AllTrainersFragment fragment2 = new AllTrainersFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);
