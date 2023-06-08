@@ -71,7 +71,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/fitness"
+                        android:background="@drawable/basketball"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -122,7 +122,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/fitness"
+                        android:background="@drawable/badminton"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -181,7 +181,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/sporty"
+                        android:background="@drawable/swimming"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -243,7 +243,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/fitness"
+                        android:background="@drawable/volleyball"
                         android:orientation="vertical">
 
                         <LinearLayout

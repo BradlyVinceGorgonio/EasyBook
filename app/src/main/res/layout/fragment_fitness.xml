@@ -70,7 +70,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/fitness"
+                        android:background="@drawable/calesthenicsimg"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -121,7 +121,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/fitness"
+                        android:background="@drawable/athleticimg"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -180,7 +180,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/sporty"
+                        android:background="@drawable/gymimg"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -242,7 +242,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/fitness"
+                        android:background="@drawable/gymnastics"
                         android:orientation="vertical">
 
                         <LinearLayout
