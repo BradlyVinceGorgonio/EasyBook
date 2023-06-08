@@ -214,9 +214,10 @@
     <ScrollView
         android:layout_width="199dp"
         android:layout_height="46dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="-50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="-20dp"
         android:layout_marginEnd="169dp"
+
         app:layout_constraintBottom_toTopOf="@+id/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
