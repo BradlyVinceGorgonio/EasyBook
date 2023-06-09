@@ -15,6 +15,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,8 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_all_trainers, container, false);
+
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -72,6 +76,7 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
                             String name = document.getString("name");
                             String description = document.getString("description");
                             String uid = document.getString("uid");
+                            String profilePictureUrl = document.getString("profilePictureUrl");
 
                             // Check if "satisfied_users" field exists and has a valid value
                             long price = 0; // Default value if field is missing or null
@@ -82,15 +87,38 @@ public class AllTrainersFragment extends Fragment implements UserAdapter.OnItemC
                                 }
                             }
 
-                            TrainerClass trainer = new TrainerClass(name, "Price per session: P" + price, description, uid);
-                            trainerList.add(trainer);
+                            // Fetch the profile picture URL from Firebase Storage
+                            fetchProfilePictureUrl(name, "Price per session: P"+ price, description, uid, "/"+profilePictureUrl);
+
+
                         }
-                        trainerAdapter.notifyDataSetChanged();
                     } else {
                         // Handle the failure scenario
                     }
                 });
     }
+
+    private void fetchProfilePictureUrl(String name, String price, String description, String uid, String profilePictureUrl) {
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("applying_trainer_images/" + uid + profilePictureUrl);
+
+        final String[] tempProfilePictureUrl = {profilePictureUrl};  // Declare a final temporary variable
+
+        storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+            tempProfilePictureUrl[0] = uri.toString();  // Assign the value to the temporary variable
+
+            // Create a TrainerClass instance with the retrieved data
+            TrainerClass trainer = new TrainerClass(name, price, description, uid, tempProfilePictureUrl[0]);
+            trainerList.add(trainer);
+
+            // Notify the adapter that data has changed
+            trainerAdapter.notifyDataSetChanged();
+        }).addOnFailureListener(e -> {
+            // Handle any errors that occur while fetching the profile picture URL
+        });
+    }
+
+
+
 
 
 

@@ -6,12 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -60,6 +67,7 @@ public class trainerHomeFragment extends Fragment implements TrainerUserAdapter.
 
     private void fetchDataFromFirestore()
     {
+        /*
         Log.d("Checker", "fetchDataFromFirestore called");
         // Clear the existing bookList
         bookList.clear();
@@ -73,39 +81,55 @@ public class trainerHomeFragment extends Fragment implements TrainerUserAdapter.
 
         // Notify the adapter of the data change
         traineruserAdapter.notifyDataSetChanged();
-        /*
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("trainer")
-                //Add SubCollections
-                .whereArrayContains("category_field", field)
-                //.orderBy("satisfied_users", Query.Direction.DESCENDING)
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        bookList.clear();
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            String name = document.getString("name");
-                            String description = document.getString("description");
-                            String uid = document.getString("uid");
-
-                            // Check if "satisfied_users" field exists and has a valid value
-                            long price = 0; // Default value if field is missing or null
-                            if (document.contains("price")) {
-                                Object value = document.get("price");
-                                if (value instanceof Long) {
-                                    price = (long) value;
-                                }
-                            }
-
-                            BookRequestClass trainer = new BookRequestClass(name, goal, schedule, uid, fitnessLevel); //Fixed =)
-                            bookList.add(trainer);
-                        }
-                        traineruserAdapter.notifyDataSetChanged();
-                    } else {
-                        // Handle the failure scenario
-                    }
-                });
 
          */
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String currentUserId = firebaseAuth.getCurrentUser().getUid();
+
+        CollectionReference bookingRequestCollectionRef = db.collection("trainer")
+                .document(currentUserId)
+                .collection("booking_request");
+
+        bookingRequestCollectionRef.get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot querySnapshot) {
+                        // Clear the existing bookList
+                        bookList.clear();
+                        for (DocumentSnapshot documentSnapshot : querySnapshot) {
+                            String bookingRequestId = documentSnapshot.getId();
+                            String name = documentSnapshot.getString("name");
+                            String status = documentSnapshot.getString("status");
+                            Timestamp timestamp = documentSnapshot.getTimestamp("timestamp");
+                            String uid = documentSnapshot.getString("uid");
+                            String schedule = documentSnapshot.getString("schedule");
+                            String location = documentSnapshot.getString("location");
+                            String level = documentSnapshot.getString("level");
+
+
+                            Log.d("Checker", "fetchDataFromFirestore called");
+
+
+                            // Manually create the BookRequestClass instance
+                            BookRequestClass trainer = new BookRequestClass(name, schedule, uid, level, location);
+
+                            // Add the trainer instance to the bookList
+                            bookList.add(trainer);
+                            Log.d("Checker", "BookList size: " + bookList.size());
+
+                            // Notify the adapter of the data change
+                            traineruserAdapter.notifyDataSetChanged();
+
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Error retrieving the documents
+                    }
+                });
     }
 }

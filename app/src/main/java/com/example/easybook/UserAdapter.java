@@ -1,10 +1,14 @@
 package com.example.easybook;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.example.easybook.TrainerClass;
 
 import androidx.annotation.NonNull;
@@ -43,6 +47,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.TrainerViewHol
         holder.trainerDescription.setText(trainer.getDescription());
         holder.trainerPrice.setText(trainer.getSatisfiedUsers());
 
+        // Load the profile picture using Glide
+        Glide.with(context)
+                .load(trainer.getProfilePictureUrl())  // Use the appropriate method to get the profile picture URL
+                .placeholder(R.drawable.personvector)  // Placeholder image while loading
+                .error(R.drawable.personvector)  // Error image if loading fails
+                .into(holder.profileImage);
+
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,12 +76,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.TrainerViewHol
         TextView trainerPrice;
         CardView cardView;
 
+        ImageView profileImage;  // Add this line
+
         public TrainerViewHolder(View itemView) {
             super(itemView);
             trainerName = itemView.findViewById(R.id.trainerName);
             trainerDescription = itemView.findViewById(R.id.trainerDescription);
             trainerPrice = itemView.findViewById(R.id.trainerPrice);
             cardView = itemView.findViewById(R.id.itemLayout);
+            profileImage = itemView.findViewById(R.id.profileImage);
         }
     }
 }
