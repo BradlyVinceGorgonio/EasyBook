@@ -126,6 +126,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
         user.put("last name", lastName);
         user.put("name", fullname);
         user.put("age", age);
+        user.put("currentTrainer", null);
         user.put("gender", gender);
         user.put("contact number", contactNum);
         user.put("Address", Address);

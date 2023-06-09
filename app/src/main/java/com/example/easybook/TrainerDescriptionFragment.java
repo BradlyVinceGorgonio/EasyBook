@@ -1,11 +1,16 @@
 package com.example.easybook;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +21,14 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TrainerDescriptionFragment extends Fragment
 {
@@ -41,38 +50,29 @@ public class TrainerDescriptionFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-                CollectionReference customerCollectionRef = db.collection("customer");
-                String currentUserId = firebaseAuth.getCurrentUser().getUid();
+                String trainerId = getArguments().getString("trainerId");
 
-                customerCollectionRef.document(currentUserId).get()
-                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                            @Override
-                            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                if (documentSnapshot.exists()) {
-                                    String name = documentSnapshot.getString("name");
-                                    String uid = documentSnapshot.getString("uid");
-                                    long timestamp = System.currentTimeMillis();
+                BookNowFragment bookNowFragment = new BookNowFragment();
+                Bundle args = new Bundle();
+                args.putString("trainerId", trainerId);
+                bookNowFragment.setArguments(args);
 
-                                    // Do something with the retrieved data (name, uid, timestamp)
-                                } else {
-                                    // Document does not exist
-                                }
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // Error retrieving the document
-                            }
-                        });
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, bookNowFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
             }
         });
 
 
         return view;
     }
+
+
+
+
 
     private void fetchTrainerDataFromFirestore(String trainerId) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
