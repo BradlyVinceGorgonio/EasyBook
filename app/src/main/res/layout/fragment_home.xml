@@ -9,60 +9,33 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/cardview_dark_background"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+
+        >
 
         <androidx.cardview.widget.CardView
             android:id="@+id/displayUserNameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="30dp"
+            android:backgroundTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-
                 android:layout_width="match_parent"
-                android:layout_height="105dp"
-                android:background="#6D6D6D"
+                android:layout_height="80dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/displayUserName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/displayUserName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:shadowColor="#000"
-                        android:shadowDx="-5"
-                        android:shadowDy="-2"
-                        android:shadowRadius="1"
-                        android:text="Hi!, welcome "
-                        android:textColor="#E7E7E7"
-                        android:textSize="20dp"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:shadowColor="#000"
-                        android:shadowDx="-5"
-                        android:shadowDy="-2"
-                        android:shadowRadius="1"
-                        android:text="Choose category below:"
-                        android:textColor="#E7E7E7"
-                        android:textSize="20dp"></TextView>
-
-                </LinearLayout>
+                    android:shadowRadius="1"
+                    android:text="Hi!, welcome "
+                    android:textColor="@color/white"
+                    android:textSize="30dp"></TextView>
 
             </LinearLayout>
 
@@ -72,16 +45,20 @@
         <ScrollView
 
             android:id="@+id/scrollView2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:scrollbars="none"
             android:layout_below="@+id/displayUserNameLayout"
+
+            android:layout_marginTop="-13dp"
+
+            android:scrollbars="none"
             tools:layout_editor_absoluteX="0dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/greycolor"
+                android:background="@color/white"
+                android:layout_marginLeft="-5dp"
                 android:orientation="vertical">
 
 
@@ -90,7 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginRight="30dp"
                     app:cardCornerRadius="8dp">
 
@@ -99,6 +76,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/martialartsimg"
+                        android:orientation="vertical"></LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_edittext"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -159,6 +143,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/fitness"
+                        android:orientation="vertical"></LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_edittext"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -211,6 +202,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="30dp"
+                    android:layout_marginBottom="60dp"
                     app:cardCornerRadius="8dp">
 
                     <LinearLayout
@@ -218,6 +210,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/sports"
+                        android:orientation="vertical"></LinearLayout>
+
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_edittext"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -266,6 +266,7 @@
 
             </LinearLayout>
         </ScrollView>
+
 
     </RelativeLayout>
 </FrameLayout>
