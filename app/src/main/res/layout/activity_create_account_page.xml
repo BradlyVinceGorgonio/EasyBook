@@ -132,19 +132,22 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
         tools:text="I agree terms and conditions" />
 
+
     <Button
         android:id="@+id/nextPageBtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@color/black"
-        android:text="NEXT"
-        android:textSize="20sp"
+        android:text="Next"
+        android:textSize="25sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmCB"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.295" />
 
     <TextView
         android:id="@+id/textView2"
