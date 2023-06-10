@@ -26,6 +26,8 @@ import java.util.Map;
 public class BookNowFragment extends Fragment {
 
     Button confirmBook;
+
+    
     private String trainerId;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
