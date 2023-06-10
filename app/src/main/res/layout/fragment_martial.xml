@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/cardview_dark_background"
+        android:background="@color/black"
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
@@ -24,14 +24,14 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#6D6D6D"
+                android:background="@color/black"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Choose a field for martial arts"
                     android:layout_marginTop="15dp"
+                    android:text="Choose a field for martial arts"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="30dp">
@@ -53,7 +53,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/greycolor"
+                android:background="@color/white"
                 android:orientation="vertical">
 
 
@@ -74,30 +74,37 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="30dp"
-                            android:orientation="horizontal">
+                            android:layout_height="match_parent"
+                            android:background="@drawable/custom_edittext"
+                            android:orientation="vertical">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="30dp"
+                                android:orientation="horizontal">
 
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="Judo Instructor"
-                                    android:textColor="#000000"
-                                    android:textSize="25dp"></TextView>
+                                    android:orientation="vertical">
 
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:shadowColor="#000"
+                                        android:shadowDx="-5"
+                                        android:shadowDy="-2"
+                                        android:shadowRadius="1"
+                                        android:text="Judo Instructor"
+                                        android:textColor="#000000"
+                                        android:textSize="25dp"></TextView>
 
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -125,39 +132,47 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="30dp"
-                            android:orientation="horizontal">
+                            android:layout_height="match_parent"
+                            android:background="@drawable/custom_edittext"
+                            android:orientation="vertical">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="30dp"
+                                android:orientation="horizontal">
 
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="Karate Instructor"
-                                    android:textColor="#000000"
-                                    android:textSize="25dp"></TextView>
+                                    android:orientation="vertical">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="."
-                                    android:textColor="#C0C0C0"
-                                    android:textSize="19dp"></TextView>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:shadowColor="#000"
+                                        android:shadowDx="-5"
+                                        android:shadowDy="-2"
+                                        android:shadowRadius="1"
+                                        android:text="Karate Instructor"
+                                        android:textColor="#000000"
+                                        android:textSize="25dp"></TextView>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:shadowColor="#000"
+                                        android:shadowDx="-5"
+                                        android:shadowDy="-2"
+                                        android:shadowRadius="1"
+                                        android:text="."
+                                        android:textColor="#C0C0C0"
+                                        android:textSize="19dp"></TextView>
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -184,40 +199,49 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="30dp"
-                            android:orientation="horizontal">
+                            android:layout_height="match_parent"
+                            android:background="@drawable/custom_edittext"
+                            android:orientation="vertical">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="30dp"
+                                android:orientation="horizontal">
 
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
+                                    android:orientation="vertical">
 
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="Taekwondo Instructor"
-                                    android:textColor="#000000"
-                                    android:textSize="25dp"></TextView>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:shadowColor="#000"
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="."
-                                    android:textColor="#C0C0C0"
-                                    android:textSize="19dp"></TextView>
+                                        android:shadowDx="-5"
+                                        android:shadowDy="-2"
+                                        android:shadowRadius="1"
+                                        android:text="Taekwondo Instructor"
+                                        android:textColor="#000000"
+                                        android:textSize="25dp"></TextView>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:shadowColor="#000"
+                                        android:shadowDx="-5"
+                                        android:shadowDy="-2"
+                                        android:shadowRadius="1"
+                                        android:text="."
+                                        android:textColor="#C0C0C0"
+                                        android:textSize="19dp"></TextView>
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -234,6 +258,7 @@
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_marginRight="30dp"
                     app:cardCornerRadius="8dp">
 
@@ -246,39 +271,48 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="30dp"
-                            android:orientation="horizontal">
+                            android:layout_height="match_parent"
+                            android:background="@drawable/custom_edittext"
+                            android:orientation="vertical">
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="30dp"
+                                android:orientation="horizontal">
 
-                                <TextView
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="Boxing Instructor"
-                                    android:textColor="#000000"
-                                    android:textSize="25dp"></TextView>
+                                    android:orientation="vertical">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:shadowColor="#000"
-                                    android:shadowDx="-5"
-                                    android:shadowDy="-2"
-                                    android:shadowRadius="1"
-                                    android:text="."
-                                    android:textColor="#C0C0C0"
-                                    android:textSize="19dp"></TextView>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:shadowColor="#000"
+                                        android:shadowDx="-5"
+                                        android:shadowDy="-2"
+                                        android:shadowRadius="1"
+                                        android:text="Boxing Instructor"
+                                        android:textColor="#000000"
+                                        android:textSize="25dp"></TextView>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:shadowColor="#000"
+                                        android:shadowDx="-5"
+                                        android:shadowDy="-2"
+                                        android:shadowRadius="1"
+                                        android:text="."
+                                        android:textColor="#C0C0C0"
+                                        android:textSize="19dp"></TextView>
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -287,7 +321,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
 
             </LinearLayout>

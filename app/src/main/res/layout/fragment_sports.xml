@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/cardview_dark_background"
+        android:background="@color/black"
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
@@ -24,14 +24,14 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#6D6D6D"
+                android:background="@color/black"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Choose a field for sports"
                     android:layout_marginTop="15dp"
+                    android:text="Choose a field for sports"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="30dp">
@@ -54,7 +54,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/greycolor"
+                android:background="@color/white"
                 android:orientation="vertical">
 
 
@@ -67,11 +67,19 @@
                     android:layout_marginRight="30dp"
                     app:cardCornerRadius="8dp">
 
+
                     <LinearLayout
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/basketball"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_edittext"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -98,7 +106,7 @@
                                     android:textColor="#000000"
                                     android:textSize="25dp"></TextView>
 
-
+                            </LinearLayout>
 
                             </LinearLayout>
 
@@ -123,6 +131,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/badminton"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_edittext"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -159,6 +174,7 @@
                                     android:text="."
                                     android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
+                            </LinearLayout>
 
                             </LinearLayout>
 
@@ -182,6 +198,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/swimming"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_edittext"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -219,6 +242,7 @@
                                     android:text="."
                                     android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
+                            </LinearLayout>
 
                             </LinearLayout>
 
@@ -244,6 +268,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/volleyball"
+                        android:orientation="vertical">
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_edittext"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -280,7 +310,7 @@
                                     android:text="."
                                     android:textColor="#C0C0C0"
                                     android:textSize="19dp"></TextView>
-
+                            </LinearLayout>
                             </LinearLayout>
 
                         </LinearLayout>
