@@ -68,6 +68,7 @@ public class AcceptRejectTrainerFragment extends Fragment {
         CollectionReference trainerRef = db.collection("trainer");
         CollectionReference bookingRequestRef = trainerRef.document(trainerId).collection("booking_request");
 
+        //// ERORRR ERRRRRRRRRORR ERORRRRRRRRRRRRRRRRRRRRRRRRR
         bookingRequestRef.document(clientId).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
