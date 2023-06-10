@@ -56,33 +56,19 @@ public class trainerHomeFragment extends Fragment implements TrainerUserAdapter.
 
     @Override
     public void onItemClick(BookRequestClass client) {
-        String clientUid = client.getUid(); // Assuming BookRequestClass has a getId() method to retrieve the document ID
-        TrainerDescriptionFragment trainerDescriptionFragment = TrainerDescriptionFragment.newInstance(clientUid);
+        String clientId = client.getUid(); // Assuming BookRequestClass has a getUid() method to retrieve the user ID
+        Log.d("client", "onItemClick: " + clientId);
+        AcceptRejectTrainerFragment acceptRejectTrainerFragment = AcceptRejectTrainerFragment.newInstance(clientId);
+
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.trainer_frame_layout, trainerDescriptionFragment);
+        fragmentTransaction.replace(R.id.trainer_frame_layout, acceptRejectTrainerFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
     private void fetchDataFromFirestore()
     {
-        /*
-        Log.d("Checker", "fetchDataFromFirestore called");
-        // Clear the existing bookList
-        bookList.clear();
-
-        // Manually create the BookRequestClass instance
-        BookRequestClass trainer = new BookRequestClass("Daniel Keith", "8am-10am", "asdasdasdas", "Moderate", "STI GLOBAL CITY 8th Floor");
-
-        // Add the trainer instance to the bookList
-        bookList.add(trainer);
-        Log.d("Checker", "BookList size: " + bookList.size());
-
-        // Notify the adapter of the data change
-        traineruserAdapter.notifyDataSetChanged();
-
-         */
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -132,4 +118,12 @@ public class trainerHomeFragment extends Fragment implements TrainerUserAdapter.
                     }
                 });
     }
+    public static AcceptRejectTrainerFragment newInstance(String clientId) {
+        AcceptRejectTrainerFragment fragment = new AcceptRejectTrainerFragment();
+        Bundle args = new Bundle();
+        args.putString("clientId", clientId);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
 }

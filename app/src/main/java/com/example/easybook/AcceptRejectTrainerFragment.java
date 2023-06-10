@@ -2,63 +2,97 @@ package com.example.easybook;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AcceptRejectTrainerFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
 public class AcceptRejectTrainerFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public AcceptRejectTrainerFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AcceptRejectTrainerFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AcceptRejectTrainerFragment newInstance(String param1, String param2) {
-        AcceptRejectTrainerFragment fragment = new AcceptRejectTrainerFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_accept_reject_trainer, container, false);
+
+        String clientId = getArguments().getString("clientId");
+
+        trainerHomeFragment trainerHomeFragment = new trainerHomeFragment();
+        Bundle args = new Bundle();
+        args.putString("trainerId", clientId);
+        trainerHomeFragment.setArguments(args);
+
+        Log.d("client", "onItemClick when next page: " + clientId);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_accept_reject_trainer, container, false);
+        fetchDataFromFirestore(clientId);
+       return view;
     }
+
+    private void fetchDataFromFirestore(String clientId)
+    {
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        CollectionReference trainerRef = db.collection("trainer");
+        CollectionReference bookingRequestRef = trainerRef.document(clientId).collection("booking_request");
+
+        bookingRequestRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    // Retrieve fields from the document
+                    String name = document.getString("name");
+                    String uid = document.getString("uid");
+                    String status = document.getString("status");
+                    // Retrieve other fields as needed
+                    Timestamp timestamp = document.getTimestamp("timestamp");
+                    String schedule = document.getString("schedule");
+                    String location = document.getString("location");
+                    String level = document.getString("level");
+
+                    // Do something with the retrieved fields
+                    Log.d("Firestores", "Name: " + name);
+                    Log.d("Firestores", "UID: " + uid);
+                    Log.d("Firestores", "Status: " + status);
+                    Log.d("Firestores", "timestamp: " + timestamp);
+                    Log.d("Firestores", "schedule: " + schedule);
+                    Log.d("Firestores", "location: " + status);
+                    Log.d("Firestores", "level: " + level);
+                    Log.d("Firestores", "location: " + location);
+
+                    TextView clientName = getView().findViewById(R.id.clientName);
+                    clientName.setText(name);
+                    // Process other fields as needed
+                }
+            } else {
+                Log.d("Firestore", "Error getting booking requests: " + task.getException());
+            }
+        });
+
+    }
+
+
+    public static AcceptRejectTrainerFragment newInstance(String clientId) {
+        AcceptRejectTrainerFragment fragment = new AcceptRejectTrainerFragment();
+        Bundle args = new Bundle();
+        args.putString("clientId", clientId);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+
 }
