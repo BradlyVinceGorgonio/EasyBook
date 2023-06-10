@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -22,6 +23,14 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class AcceptRejectTrainerFragment extends Fragment {
+
+    private String name;
+    private String uid;
+    private String status;
+    private Timestamp timestamp;
+    private String schedule;
+    private String location;
+    private String level;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,31 +46,41 @@ public class AcceptRejectTrainerFragment extends Fragment {
 
         Log.d("client", "onItemClick when next page: " + clientId);
 
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+
+        if (currentUser != null) {
+            String Traineruid = currentUser.getUid();
+            // Use the UID as needed
+            fetchDataFromFirestore(clientId, Traineruid);
+            Log.d("Firebase", "Current UID: " + Traineruid);
+        } else {
+            Log.d("Firebase", "No user signed in.");
+        }
+
         // Inflate the layout for this fragment
-        fetchDataFromFirestore(clientId);
+
        return view;
     }
 
-    private void fetchDataFromFirestore(String clientId)
-    {
-
+    private void fetchDataFromFirestore(String clientId, String trainerId) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
         CollectionReference trainerRef = db.collection("trainer");
-        CollectionReference bookingRequestRef = trainerRef.document(clientId).collection("booking_request");
+        CollectionReference bookingRequestRef = trainerRef.document(trainerId).collection("booking_request");
 
-        bookingRequestRef.get().addOnCompleteListener(task -> {
+        bookingRequestRef.document(clientId).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                for (QueryDocumentSnapshot document : task.getResult()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
                     // Retrieve fields from the document
-                    String name = document.getString("name");
-                    String uid = document.getString("uid");
-                    String status = document.getString("status");
+                    name = document.getString("name");
+                    uid = document.getString("uid");
+                    status = document.getString("status");
                     // Retrieve other fields as needed
-                    Timestamp timestamp = document.getTimestamp("timestamp");
-                    String schedule = document.getString("schedule");
-                    String location = document.getString("location");
-                    String level = document.getString("level");
+                    timestamp = document.getTimestamp("timestamp");
+                    schedule = document.getString("schedule");
+                    location = document.getString("location");
+                    level = document.getString("level");
 
                     // Do something with the retrieved fields
                     Log.d("Firestores", "Name: " + name);
@@ -75,13 +94,13 @@ public class AcceptRejectTrainerFragment extends Fragment {
 
                     TextView clientName = getView().findViewById(R.id.clientName);
                     clientName.setText(name);
+
                     // Process other fields as needed
                 }
             } else {
                 Log.d("Firestore", "Error getting booking requests: " + task.getException());
             }
         });
-
     }
 
 
