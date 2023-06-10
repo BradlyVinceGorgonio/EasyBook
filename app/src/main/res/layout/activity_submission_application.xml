@@ -271,7 +271,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Mondayr"
+                android:text="Monday"
                 android:textSize="20dp">
 
             </CheckBox>
@@ -462,7 +462,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/textview_border"
-                android:hint="Enter your training facility address:"
+                android:hint=" Enter your training facility address:"
                 android:textSize="20sp"></EditText>
 
 

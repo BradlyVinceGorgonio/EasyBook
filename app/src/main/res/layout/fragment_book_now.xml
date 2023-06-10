@@ -224,7 +224,7 @@
         android:layout_marginEnd="31dp"
         android:layout_marginBottom="2dp"
         android:background="@drawable/textview_border"
-        android:hint="Enter your training facility address:"
+        android:hint=" Enter your training facility address:"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/booktrainer"
         app:layout_constraintEnd_toEndOf="parent"
