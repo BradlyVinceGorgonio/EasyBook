@@ -52,13 +52,19 @@ public class AcceptRejectTrainerFragment extends Fragment {
         if (currentUser != null) {
             String Traineruid = currentUser.getUid();
             // Use the UID as needed
+            Log.d("Firebases", "Current UID be: " + Traineruid);
             fetchDataFromFirestore(clientId, Traineruid);
-            Log.d("Firebase", "Current UID: " + Traineruid);
+            Log.d("Firebases", "Current UID: af " + Traineruid);
         } else {
-            Log.d("Firebase", "No user signed in.");
+            Log.d("Firebases", "No user signed in.");
         }
 
         // Inflate the layout for this fragment
+
+
+
+
+
 
        return view;
     }
@@ -68,6 +74,7 @@ public class AcceptRejectTrainerFragment extends Fragment {
         CollectionReference trainerRef = db.collection("trainer");
         CollectionReference bookingRequestRef = trainerRef.document(trainerId).collection("booking_request");
 
+        Log.d("what", "fetchDataFromFirestore: Im here");
         //// ERORRR ERRRRRRRRRORR ERORRRRRRRRRRRRRRRRRRRRRRRRR
         bookingRequestRef.document(clientId).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -84,17 +91,17 @@ public class AcceptRejectTrainerFragment extends Fragment {
                     level = document.getString("level");
 
                     // Do something with the retrieved fields
-                    Log.d("Firestores", "Name: " + name);
-                    Log.d("Firestores", "UID: " + uid);
-                    Log.d("Firestores", "Status: " + status);
-                    Log.d("Firestores", "timestamp: " + timestamp);
-                    Log.d("Firestores", "schedule: " + schedule);
-                    Log.d("Firestores", "location: " + status);
-                    Log.d("Firestores", "level: " + level);
-                    Log.d("Firestores", "location: " + location);
+                    Log.d("what", "Name: " + name);
+                    Log.d("what", "UID: " + uid);
+                    Log.d("what", "Status: " + status);
+                    Log.d("what", "timestamp: " + timestamp);
+                    Log.d("what", "schedule: " + schedule);
+                    Log.d("what", "location: " + status);
+                    Log.d("what", "level: " + level);
+                    Log.d("what", "location: " + location);
 
-                    TextView clientName = getView().findViewById(R.id.clientName);
-                    clientName.setText(name);
+
+
 
                     // Process other fields as needed
                 }
@@ -103,6 +110,7 @@ public class AcceptRejectTrainerFragment extends Fragment {
             }
         });
     }
+
 
 
     public static AcceptRejectTrainerFragment newInstance(String clientId) {
