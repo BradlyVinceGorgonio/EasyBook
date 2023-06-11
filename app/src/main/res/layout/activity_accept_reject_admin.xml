@@ -8,15 +8,12 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/displayUserNameLayout"
+        android:id="@+id/cardView5"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="660dp"
-        app:cardCornerRadius="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-680dp"
+        android:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -39,98 +36,297 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="697dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardView5">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
     <ImageView
         android:id="@+id/trainersImage"
-        android:layout_width="94dp"
-        android:layout_height="109dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:background="@drawable/textview_border"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/displayUserNameLayout"
-        app:layout_constraintVertical_bias="0.059"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="140dp"
         app:srcCompat="@drawable/personvector" />
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name: "
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
-        app:layout_constraintStart_toEndOf="@+id/trainersImage"
-        app:layout_constraintTop_toBottomOf="@+id/displayUserNameLayout"
-        app:layout_constraintVertical_bias="0.052" />
-
-    <TextView
-        android:id="@+id/trainersName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Trainer's Name"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/displayUserNameLayout"
-        app:layout_constraintVertical_bias="0.052" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age: "
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toEndOf="@+id/trainersImage"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.014" />
-
-    <TextView
-        android:id="@+id/trainersAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.014" />
-
-    <TextView
-
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address: "
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="0.017" />
-
-    <TextView
-        android:id="@+id/trainersAddress"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Trainer's Address"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView29"
-        app:layout_constraintTop_toBottomOf="@+id/trainersName"
-        app:layout_constraintVertical_bias="0.089" />
 
 
+        <TextView
+            android:id="@+id/trainersMame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="596dp"
+            android:text="Trainer's Name "
+            android:textSize="25dp"
+            android:layout_marginLeft="-150dp"
+            android:layout_marginTop="150dp"
+       />
+
+        <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age: "
+                android:textSize="20dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="-270dp"
+                 />
+
+            <TextView
+                android:id="@+id/trainersAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textSize="20dp"
+                android:layout_marginTop="220dp"
+                />
+
+            <TextView
+
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address: "
+                android:textSize="20dp"
+                android:layout_marginLeft="-80dp"
+                android:layout_marginTop="270dp"
+                />
+
+            <TextView
+                android:id="@+id/trainersAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trainer's Address"
+                android:textSize="20dp"
+                android:layout_marginTop="270dp"
+                 />
+
+
+        <TextView
+            android:id="@+id/tvValidID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-238dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginBottom="260dp"
+            android:text="Uploaded ID"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/trainerValidID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="330sp"
+            android:backgroundTint="#00B0FF"
+            android:text="Trainer's Valid ID" />
+
+        <TextView
+            android:id="@+id/tvProofOfDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-279dp"
+            android:layout_marginTop="390dp"
+            android:text="Uploaded Document"
+            android:textSize="20dp"
+
+            />
+
+        <Button
+            android:id="@+id/trainerDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="385sp"
+            android:layout_marginBottom="176dp"
+            android:backgroundTint="#00B0FF"
+            android:text="Trainer's Document" />
+
+        <TextView
+            android:id="@+id/tvIDNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-370dp"
+            android:layout_marginTop="450dp"
+            android:text="ID Number"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/trainerIDNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="450dp"
+            android:text="Trainer's ID Number"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-281dp"
+            android:layout_marginTop="500dp"
+            android:layout_marginBottom="20dp"
+            android:text="Trainer's Category:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/trainersCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="500dp"
+            android:layout_marginBottom="20dp"
+            android:text=" Category:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-268dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginBottom="20dp"
+            android:text="Trainer's Field:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/trainersField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginBottom="20dp"
+            android:text=" Field:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-192dp"
+            android:layout_marginTop="600dp"
+            android:layout_marginBottom="20dp"
+            android:text="Trainer's Day &amp; Time:"
+            android:textSize="20sp"></TextView>
+
+        <ScrollView
+            android:id="@+id/trainersSched"
+            android:layout_width="190dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="630dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Monday 8AM - 5PM"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Wednesday 8AM - 5PM"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:textSize="16dp"
+                android:layout_height="wrap_content"
+                android:text="Friday 8AM - 5PM"/>
+            </LinearLayout>
+        </ScrollView>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-377dp"
+            android:layout_marginTop="650dp"
+            android:layout_marginBottom="20dp"
+            android:text="Trainer's Facility:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/trainersFacility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="650dp"
+            android:layout_marginBottom="20dp"
+            android:text=" Facility Address:"
+            android:textSize="16sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-275dp"
+            android:layout_marginTop="700dp"
+            android:layout_marginBottom="20dp"
+            android:text="Trainer's Price:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/trainersPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="700dp"
+            android:layout_marginBottom="20dp"
+            android:text="Price:"
+            android:inputType="text"
+            android:textSize="20sp">
+
+        </TextView>
+
+
+        <Button
+            android:id="@+id/trainersReject"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="-205dp"
+            android:layout_marginTop="800dp"
+            android:backgroundTint="#FF1744"
+            android:text="X"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            ></Button>
+
+        <Button
+            android:id="@+id/trainersAccept"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="800dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#00E676"
+            android:text="✓"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+
+            >
+
+
+        </Button>
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
