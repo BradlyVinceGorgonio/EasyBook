@@ -191,6 +191,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp"
                 android:text="Martial Arts Instructor"
                 android:textSize="20dp">
 
@@ -201,6 +202,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp"
                 android:text="Fitness Instructor"
                 android:textSize="20dp"></CheckBox>
 
@@ -209,6 +211,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp"
                 android:text="Sports Instructor"
                 android:textSize="20dp"></CheckBox>
 
@@ -226,6 +229,7 @@
             <CheckBox
                 android:id="@+id/field1"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="Field 1"
@@ -236,6 +240,7 @@
             <CheckBox
                 android:id="@+id/field2"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="Field 2"
@@ -244,6 +249,7 @@
             <CheckBox
                 android:id="@+id/field3"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="Field 3"
@@ -253,6 +259,7 @@
                 android:id="@+id/field4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:layout_marginBottom="10dp"
                 android:text="Field 4"
                 android:textSize="20dp"></CheckBox>
@@ -271,6 +278,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
                 android:text="Monday"
                 android:textSize="20dp">
 
@@ -281,6 +289,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
                 android:text="Tuesday"
                 android:textSize="20dp"></CheckBox>
 
@@ -288,6 +297,7 @@
                 android:id="@+id/Wednesday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginBottom="10dp"
                 android:text="Wednesday"
                 android:textSize="20dp"></CheckBox>
@@ -297,7 +307,7 @@
                 android:id="@+id/Thursday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="170dp"
                 android:layout_marginTop="-175dp"
                 android:layout_marginBottom="100dp"
                 android:text="Thursday"
@@ -308,7 +318,7 @@
                 android:id="@+id/Friday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="170dp"
                 android:layout_marginTop="-90dp"
                 android:layout_marginBottom="100dp"
                 android:text="Friday"
@@ -319,7 +329,7 @@
                 android:id="@+id/Saturday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="170dp"
                 android:layout_marginTop="-90dp"
                 android:layout_marginBottom="100dp"
                 android:text="Saturday"
@@ -351,13 +361,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="From:"
+                android:layout_marginLeft="20dp"
                 android:textSize="20dp"></TextView>
 
             <EditText
                 android:id="@+id/fromtimeET"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="55dp"
+                android:layout_marginLeft="72dp"
                 android:layout_marginTop="-27sp"
                 android:background="@drawable/textview_border"
                 android:hint="E,g 1:00"
@@ -366,7 +377,7 @@
             <ScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="126dp"
+                android:layout_marginLeft="140dp"
                 android:layout_marginTop="-30sp">
 
                 <LinearLayout
@@ -398,7 +409,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="180dp"
+                android:layout_marginLeft="230dp"
                 android:layout_marginTop="-95sp"
                 android:text="To:"
                 android:textSize="20dp"></TextView>
@@ -407,7 +418,7 @@
                 android:id="@+id/totimeET"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="213dp"
+                android:layout_marginLeft="260dp"
                 android:layout_marginTop="-27sp"
                 android:background="@drawable/textview_border"
                 android:hint="E,g 1:00"
@@ -416,7 +427,7 @@
             <ScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="283dp"
+                android:layout_marginLeft="330dp"
                 android:layout_marginTop="-30sp">
 
                 <LinearLayout
@@ -486,6 +497,7 @@
                 android:textColor="@color/black"
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="125dp"
+                android:inputType="number"
                 android:textSize="20dp">
 
             </EditText>
