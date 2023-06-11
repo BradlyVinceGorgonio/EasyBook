@@ -113,51 +113,11 @@
 
 
         <TextView
-            android:id="@+id/tvValidID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-238dp"
-            android:layout_marginTop="330dp"
-            android:layout_marginBottom="260dp"
-            android:text="Uploaded ID"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/trainerValidID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="330sp"
-            android:backgroundTint="#00B0FF"
-            android:text="Trainer's Valid ID" />
-
-        <TextView
-            android:id="@+id/tvProofOfDocument"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-279dp"
-            android:layout_marginTop="390dp"
-            android:text="Uploaded Document"
-            android:textSize="20dp"
-
-            />
-
-        <Button
-            android:id="@+id/trainerDocument"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15sp"
-            android:layout_marginTop="385sp"
-            android:layout_marginBottom="176dp"
-            android:backgroundTint="#00B0FF"
-            android:text="Trainer's Document" />
-
-        <TextView
             android:id="@+id/tvIDNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-370dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginLeft="-240dp"
+            android:layout_marginTop="320dp"
             android:text="ID Number"
             android:textSize="20sp" />
 
@@ -166,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="320dp"
             android:text="Trainer's ID Number"
             android:textSize="20sp" />
 
@@ -174,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-281dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="370dp"
             android:layout_marginBottom="20dp"
             android:text="Trainer's Category:"
             android:textSize="20sp"></TextView>
@@ -184,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="370dp"
             android:layout_marginBottom="20dp"
             android:text=" Category:"
             android:textSize="20sp"></TextView>
@@ -193,7 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-268dp"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="420dp"
             android:layout_marginBottom="20dp"
             android:text="Trainer's Field:"
             android:textSize="20sp"></TextView>
@@ -203,7 +163,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="420dp"
             android:layout_marginBottom="20dp"
             android:text=" Field:"
             android:textSize="20sp"></TextView>
@@ -212,7 +172,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-192dp"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="470dp"
             android:layout_marginBottom="20dp"
             android:text="Trainer's Day &amp; Time:"
             android:textSize="20sp"></TextView>
@@ -221,7 +181,7 @@
             android:id="@+id/trainersSched"
             android:layout_width="190dp"
             android:layout_height="60dp"
-            android:layout_marginTop="630dp"
+            android:layout_marginTop="500dp"
             >
             <LinearLayout
                 android:layout_width="match_parent"
@@ -251,7 +211,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-377dp"
-            android:layout_marginTop="650dp"
+            android:layout_marginTop="520dp"
             android:layout_marginBottom="20dp"
             android:text="Trainer's Facility:"
             android:textSize="20sp"></TextView>
@@ -261,7 +221,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="650dp"
+            android:layout_marginTop="520dp"
             android:layout_marginBottom="20dp"
             android:text=" Facility Address:"
             android:textSize="16sp"></TextView>
@@ -270,7 +230,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-275dp"
-            android:layout_marginTop="700dp"
+            android:layout_marginTop="570dp"
             android:layout_marginBottom="20dp"
             android:text="Trainer's Price:"
             android:textSize="20sp"></TextView>
@@ -280,21 +240,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="700dp"
+            android:layout_marginTop="570dp"
             android:layout_marginBottom="20dp"
             android:text="Price:"
-            android:inputType="text"
             android:textSize="20sp">
 
         </TextView>
+
+
+
+        <TextView
+            android:id="@+id/tvValidID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-188dp"
+            android:layout_marginTop="680dp"
+            android:layout_marginBottom="260dp"
+            android:text="Uploaded ID"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/trainerValidID"
+            android:background="@drawable/personvector"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="675sp"
+            android:backgroundTint="#00B0FF"
+            android:text="Trainer's Valid ID" />
+
+        <TextView
+            android:id="@+id/tvProofOfDocument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-225dp"
+            android:layout_marginTop="780dp"
+            android:text="Uploaded Document"
+            android:textSize="20dp"
+
+            />
+
+        <ImageView
+            android:id="@+id/trainerDocument"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/personvector"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="785sp"
+            android:layout_marginBottom="176dp"
+            android:backgroundTint="#00B0FF"
+            android:text="Trainer's Document" />
+
 
 
         <Button
             android:id="@+id/trainersReject"
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="-205dp"
-            android:layout_marginTop="800dp"
+            android:layout_marginLeft="-310dp"
+            android:layout_marginTop="900dp"
             android:backgroundTint="#FF1744"
             android:text="X"
             android:textColor="@color/white"
@@ -306,7 +310,7 @@
             android:layout_width="200dp"
             android:layout_height="100dp"
             android:layout_marginLeft="1dp"
-            android:layout_marginTop="800dp"
+            android:layout_marginTop="900dp"
             android:layout_marginBottom="30dp"
             android:backgroundTint="#00E676"
             android:text="✓"
