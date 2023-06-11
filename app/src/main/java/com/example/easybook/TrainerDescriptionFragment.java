@@ -15,8 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +27,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
 import java.util.List;
@@ -42,6 +46,8 @@ public class TrainerDescriptionFragment extends Fragment
 
 
         fetchTrainerDataFromFirestore(trainerId);
+
+
 
         //Book now Button
         Button bookNowBtn = (Button) view.findViewById(R.id.booknowBtn);
@@ -86,6 +92,7 @@ public class TrainerDescriptionFragment extends Fragment
                             String name = document.getString("name");
                             String description = document.getString("description");
                             String category = document.getString("category");
+                            String uid = document.getString("uid");
                             long price = 0; // Default value if field is missing or null
                             Object value = document.get("price");
                             if (value instanceof Long) {
@@ -98,14 +105,13 @@ public class TrainerDescriptionFragment extends Fragment
                             }
                             String satisfiedString = Long.toString(satisfied);
                             String priceString = Long.toString(price);
-
+                            String profilePictureUrl = document.getString("profilePictureUrl");
                             //Display array of category fields
                             List<String> categoryFields = (List<String>) document.get("category_field");
                             String categoryFieldsString = TextUtils.join(", ", categoryFields);
                             // Display the retrieved data in your UI elements
                             // For example, set the text of TextViews
 
-                            // Example:
                             TextView nameTextView = getView().findViewById(R.id.userName);
                             TextView descriptionTextView = getView().findViewById(R.id.description);
                             TextView categoryTV = getView().findViewById(R.id.category);
@@ -113,6 +119,8 @@ public class TrainerDescriptionFragment extends Fragment
                             TextView priceTV = getView().findViewById(R.id.userPrice);
                             TextView satisfiedTV = getView().findViewById(R.id.satisfiedclients);
                             Button booknow = getView().findViewById(R.id.booknowBtn);
+
+
 
                             booknow.setText("Book now for " + priceString+"php");
                             nameTextView.setText(name);
@@ -123,7 +131,35 @@ public class TrainerDescriptionFragment extends Fragment
                             priceTV.setText(priceString + "php");
                             satisfiedTV.setText("Satisfied Clients: "+satisfiedString);
 
-                            // Repeat the above step for other fields
+                            Log.d("Checker", "uid = " + uid);
+                            Log.d("Checker", "image url = " + profilePictureUrl);
+                            //Display Image
+                            StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("applying_trainer_images/" + uid + "/" +profilePictureUrl);
+
+                            final String[] tempProfilePictureUrl = {profilePictureUrl};  // Declare a final temporary variable
+
+                            storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                                tempProfilePictureUrl[0] = uri.toString();  // Assign the value to the temporary variable
+
+                                // Display the retrieved data in your UI elements
+                                // For example, set the image using a library like Picasso or Glide
+
+                                // Example using Picasso:
+                                ImageView profileImageView = getView().findViewById(R.id.userImg);
+                                Glide.with(requireContext())
+                                        .load(tempProfilePictureUrl[0])
+                                        .into(profileImageView);
+
+
+
+                                // Update other UI elements with the retrieved data
+                                // ...
+                            }).addOnFailureListener(e -> {
+                                // Handle any errors that occur while fetching the profile picture URL
+                            });
+
+
+
 
                         } else {
                             // The document does not exist
@@ -133,6 +169,8 @@ public class TrainerDescriptionFragment extends Fragment
                     }
                 });
     }
+
+
 
     public static TrainerDescriptionFragment newInstance(String trainerId) {
         TrainerDescriptionFragment fragment = new TrainerDescriptionFragment();

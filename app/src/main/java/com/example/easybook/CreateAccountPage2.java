@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CreateAccountPage2 extends AppCompatActivity {
-    EditText  name, lastName, age, gender, contactNumber, address, city, Zipcode, birthDate;
+    EditText  name, lastName, age, gender, contactNumber, address, city, Zipcode;
 
 
     private static final String TAG = "CreateAccountPage2";
@@ -51,7 +51,6 @@ public class CreateAccountPage2 extends AppCompatActivity {
         address = (EditText) findViewById(R.id.address);
         city = (EditText) findViewById(R.id.city);
         Zipcode = (EditText) findViewById(R.id.Zipcode);
-        birthDate = (EditText) findViewById(R.id.birthDate);
         registerBtn = (Button) findViewById(R.id.registerBtn);
 
         String nameText = name.getText().toString().trim();
@@ -63,12 +62,11 @@ public class CreateAccountPage2 extends AppCompatActivity {
         String addressText = address.getText().toString().trim();
         String cityText = city.getText().toString().trim();
         String zipcodeText = Zipcode.getText().toString().trim();
-        String birthDateText = birthDate.getText().toString().trim();
 
 
         boolean allTextFilled = false;
 
-        if(!TextUtils.isEmpty(nameText) && !TextUtils.isEmpty(lastNameText) && !TextUtils.isEmpty(ageText) && !TextUtils.isEmpty(genderText) && !TextUtils.isEmpty(contactText) && !TextUtils.isEmpty(addressText) && !TextUtils.isEmpty(cityText) && !TextUtils.isEmpty(zipcodeText) && !TextUtils.isEmpty(birthDateText))
+        if(!TextUtils.isEmpty(nameText) && !TextUtils.isEmpty(lastNameText) && !TextUtils.isEmpty(ageText) && !TextUtils.isEmpty(genderText) && !TextUtils.isEmpty(contactText) && !TextUtils.isEmpty(addressText) && !TextUtils.isEmpty(cityText) && !TextUtils.isEmpty(zipcodeText))
         {
             allTextFilled = true;
         }
@@ -99,10 +97,9 @@ public class CreateAccountPage2 extends AppCompatActivity {
                     String addressText = address.getText().toString().trim();
                     String cityText = city.getText().toString().trim();
                     String zipcodeText = Zipcode.getText().toString().trim();
-                    String birthDateText = birthDate.getText().toString().trim();
 
                     createAccount(email, password, username, nameText, lastNameText, fullname, ageText, genderText, contactText,
-                            addressText, cityText, zipcodeText, birthDateText);
+                            addressText, cityText, zipcodeText);
                     //Lagay mo sa DB lahat ng user credentials
 
                 }
@@ -113,7 +110,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
         });
     }
 
-    public void addCollection(String uid, String username,String name, String lastName, String fullname, String age, String gender, String contactNum, String Address, String city, String zipcode, String birthDate)
+    public void addCollection(String uid, String username,String name, String lastName, String fullname, String age, String gender, String contactNum, String Address, String city, String zipcode)
     {
 
 
@@ -132,7 +129,6 @@ public class CreateAccountPage2 extends AppCompatActivity {
         user.put("Address", Address);
         user.put("City", city);
         user.put("Zipcode", zipcode);
-        user.put("birth date", birthDate);
 
 
 
@@ -155,7 +151,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
 
     }
 
-    private void createAccount(String email, String password, String username, String Fname, String lastName, String fullname, String age, String gender, String contactNum, String address, String city, String zipcode, String birthDate) {
+    private void createAccount(String email, String password, String username, String Fname, String lastName, String fullname, String age, String gender, String contactNum, String address, String city, String zipcode) {
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -166,7 +162,7 @@ public class CreateAccountPage2 extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             String uid = user.getUid();
-                            addCollection(uid, username, Fname, lastName, fullname, age, gender, contactNum, address, city, zipcode, birthDate);
+                            addCollection(uid, username, Fname, lastName, fullname, age, gender, contactNum, address, city, zipcode);
 
                             updateUI(user);
                         } else {
