@@ -24,7 +24,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:id="@+id/displayUserName"
@@ -48,9 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_below="@+id/displayUserNameLayout"
-
-            android:layout_marginTop="-13dp"
-
+            android:layout_marginTop="-1dp"
             android:scrollbars="none"
             tools:layout_editor_absoluteX="0dp">
 
@@ -60,6 +59,46 @@
                 android:background="@color/white"
                 android:layout_marginLeft="-5dp"
                 android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="173dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="30dp"
+                    app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:background="@drawable/easy"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginTop="125dp"
+                            android:text="Available Categories: "
+                            android:textColor="@color/black"
+                            android:textSize="25dp">
+
+                        </EditText>
+
+                </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
 
 
                 <androidx.cardview.widget.CardView
