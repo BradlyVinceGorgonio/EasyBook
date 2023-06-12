@@ -279,8 +279,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="100dp"
+                        android:background="@drawable/textview_border"
                         android:layout_marginBottom="20dp"
-                        android:hint="₱1200"
+                        android:text="₱1200"
                         android:textSize="20sp">
 
                     </TextView>
