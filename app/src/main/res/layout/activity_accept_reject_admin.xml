@@ -6,47 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".AcceptRejectAdminActivity">
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-680dp"
-        android:backgroundTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/black"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15sp"
-                android:text="Trainer's Application"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="30dp">
-
-            </TextView>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="697dp"
-        app:layout_constraintTop_toBottomOf="@+id/cardView5"
-        tools:layout_editor_absoluteX="-50dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15sp"
+                        android:text="Trainer's Application"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="30dp">
+
+                    </TextView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
@@ -140,8 +140,6 @@
                         android:textSize="20sp"></TextView>
 
 
-
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -151,8 +149,8 @@
                 android:id="@+id/textView29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-340dp"
-                android:layout_marginTop="350dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
                 android:text="Address: "
                 android:textSize="20dp" />
 
@@ -160,8 +158,8 @@
                 android:id="@+id/trainersAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="3dp"
+                android:layout_marginLeft="107dp"
+                android:layout_marginTop="-26.5dp"
                 android:background="@drawable/textview_border"
                 android:text="Trainer's Address"
                 android:textSize="20dp" />
@@ -171,8 +169,8 @@
                 android:id="@+id/tvIDNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-242.5dp"
-                android:layout_marginTop="385dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:text="ID Number: "
                 android:textSize="20sp" />
 
@@ -180,9 +178,9 @@
                 android:id="@+id/trainerIDNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="129.5dp"
+                android:layout_marginTop="-25dp"
                 android:background="@drawable/textview_border"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="385dp"
                 android:text="Trainer's ID Number"
                 android:textSize="20sp" />
 
@@ -190,18 +188,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-285dp"
-                android:layout_marginTop="420dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:text="Trainer's Day &amp; Time: "
                 android:textSize="20sp"></TextView>
 
             <ScrollView
-                android:background="@drawable/textview_border"
                 android:id="@+id/trainersSched"
                 android:layout_width="190dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="460dp">
+                android:layout_marginLeft="215dp"
+                android:layout_marginTop="-47.5dp"
+                android:background="@drawable/textview_border">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -229,132 +228,128 @@
             </ScrollView>
 
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="385dp"
+                android:layout_height="470dp"
+                android:layout_marginLeft="12.5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="200dp"
+                app:cardElevation="20dp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="385dp"
-            android:layout_height="470dp"
-            android:layout_marginLeft="-385dp"
-            android:layout_marginTop="540dp"
-            app:cardElevation="20dp"
-            android:layout_marginBottom="200dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/custom_edittext"
-            android:padding="24dp">
-
-
-
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="Trainer's Facility Address:"
-                android:textSize="20sp"></TextView>
-
-            <TextView
-                android:id="@+id/trainersFacility"
-                android:layout_width="330dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="-280dp"
-                android:layout_marginTop="55dp"
-                android:background="@drawable/textview_border"
-                android:layout_marginBottom="20dp"
-                android:text=" N/A IF NONE:"
-                android:textSize="20sp"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="-330dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="20dp"
-                android:text="Trainer's Price Per Session:"
-                android:textSize="20sp"></TextView>
-
-            <TextView
-                android:id="@+id/trainersPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="20dp"
-                android:hint="₱1200"
-                android:textSize="20sp">
-
-            </TextView>
-
-
-            <TextView
-                android:id="@+id/tvValidID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="-180dp"
-                android:layout_marginTop="200dp"
-                android:text="Uploaded ID"
-                android:textSize="20dp" />
-
-
-            <LinearLayout
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="-235sp"
-                android:layout_marginTop="150sp"
-                android:background="@drawable/custom_edittext"
-                >
-            <ImageView
-                android:id="@+id/trainerValidID"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/personvector"
-                android:backgroundTint="#00B0FF"
-                android:text="Trainer's Valid ID" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="-120sp"
-                android:layout_marginTop="300sp"
-                android:background="@drawable/custom_edittext"
-                >
-                <ImageView
-                    android:id="@+id/trainerDocument"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/personvector"
-                    />
-            </LinearLayout>
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/custom_edittext"
+                    android:padding="24dp">
 
 
-            <TextView
-                android:id="@+id/tvProofOfDocument"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="350dp"
-                android:text="Uploaded Document"
-                android:textSize="20dp"
-                android:background="@drawable/textview_border"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Trainer's Facility Address:"
+                        android:textSize="20sp"></TextView>
 
-                />
+                    <TextView
+                        android:id="@+id/trainersFacility"
+                        android:layout_width="330dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="-280dp"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/textview_border"
+                        android:text=" N/A IF NONE:"
+                        android:textSize="20sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-330dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Trainer's Price Per Session:"
+                        android:textSize="20sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/trainersPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginBottom="20dp"
+                        android:hint="₱1200"
+                        android:textSize="20sp">
+
+                    </TextView>
 
 
+                    <TextView
+                        android:id="@+id/tvValidID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-180dp"
+                        android:layout_marginTop="200dp"
+                        android:background="@drawable/textview_border"
+                        android:text="Uploaded ID"
+                        android:textSize="20dp" />
 
-        </LinearLayout>
-        </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="-235sp"
+                        android:layout_marginTop="150sp"
+                        android:background="@drawable/custom_edittext">
+
+                        <ImageView
+                            android:id="@+id/trainerValidID"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/personvector"
+                            android:backgroundTint="#00B0FF"
+                            android:text="Trainer's Valid ID" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="-120sp"
+                        android:layout_marginTop="300sp"
+                        android:background="@drawable/custom_edittext">
+
+                        <ImageView
+                            android:id="@+id/trainerDocument"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/personvector" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvProofOfDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="350dp"
+                        android:background="@drawable/textview_border"
+                        android:text="Uploaded Document"
+                        android:textSize="20dp"
+
+                        />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/trainersReject"
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:layout_marginLeft="-395dp"
-                android:layout_marginTop="1050dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-140dp"
                 android:backgroundTint="#FF1744"
                 android:text="X"
                 android:textColor="@color/white"
@@ -364,17 +359,14 @@
                 android:id="@+id/trainersAccept"
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="1050dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="205dp"
+                android:layout_marginTop="-100dp"
                 android:backgroundTint="#00E676"
                 android:text="✓"
                 android:textColor="@color/white"
                 android:textSize="30dp"
 
                 >
-
-
             </Button>
 
 
