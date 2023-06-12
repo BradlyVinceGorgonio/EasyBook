@@ -61,7 +61,20 @@ public class MainActivity extends AppCompatActivity {
             {
                 String Semail = emailLgn.getText().toString().trim();
                 String Spass = passLgn.getText().toString().trim();
-                signIn(Semail, Spass);
+
+                // ADMIN MODE
+                if(Semail.equals("admin") && Spass.equals("admin"))
+                {
+                    Intent intent = new Intent(MainActivity.this, AdminModeActivity.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    signIn(Semail, Spass);
+                }
+
+
+
             }
         });
 

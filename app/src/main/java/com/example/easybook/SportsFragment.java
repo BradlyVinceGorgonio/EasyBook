@@ -82,6 +82,10 @@ public class SportsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 AllTrainersFragment fragment2 = new AllTrainersFragment();
+                String selectedSport = "volleyball";
+                Bundle args = new Bundle();
+                args.putString("selectedSport", selectedSport);
+                fragment2.setArguments(args);
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_layout, fragment2);

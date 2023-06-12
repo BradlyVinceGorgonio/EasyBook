@@ -17,6 +17,10 @@ import android.provider.OpenableColumns;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,12 +35,17 @@ import java.util.Map;
 
 public class SubmissionApplicationActivity extends AppCompatActivity {
 
+
+
     private static final int PICK_IMAGE_REQUEST_PROFILE = 1;
     private static final int PICK_IMAGE_REQUEST_VALID_ID = 2;
     private static final int PICK_IMAGE_REQUEST_DOCUMENT = 3;
 
     private Button profilePictureBtn, validIdBtn, documentBtn;
+    private EditText description, IDNumber, reason, fromTime, toTime, trainerFacility, trainerPrice;
+    private CheckBox field1, field2, field3,field4, monday,tuesday,wednesday,thursday,friday,saturday,sunday, am, pm;
 
+    private RadioGroup categoryGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +54,58 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
         profilePictureBtn = findViewById(R.id.btnProfilePicture);
         validIdBtn = findViewById(R.id.btnValidID);
         documentBtn = findViewById(R.id.btnProofOfDocument);
+
+
+        categoryGroup = findViewById(R.id.categoryGroup);
+        field1 = (CheckBox) findViewById(R.id.field1);
+        field2 = (CheckBox) findViewById(R.id.field2);
+        field3 = (CheckBox) findViewById(R.id.field3);
+        field4 = (CheckBox) findViewById(R.id.field4);
+        categoryGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selectedRadioButton = findViewById(checkedId);
+                if (selectedRadioButton != null) {
+                    // Handle the selected option
+                    String selectedOption = selectedRadioButton.getText().toString();
+                    // Do something with the selected option
+                    Log.d("Selected Option", selectedOption);
+
+
+                    if(selectedOption.equals("Martial Arts Instructor"))
+                    {
+                        field1.setText("judo");
+                        field2.setText("karate");
+                        field3.setText("taekwondo");
+                        field4.setText("boxing");
+                    }
+                    else if(selectedOption.equals("Fitness Instructor"))
+                    {
+                        //rename title in database sorry =)
+                        selectedOption = "Fitness Trainer";
+                        Log.d("where", selectedOption);
+
+                        field1.setText("Calisthenics");
+                        field2.setText("Athletic");
+                        field3.setText("Gym");
+                        field4.setText("Gymnastics");
+
+                    }
+                    else if(selectedOption.equals("Sports Instructor"))
+                    {
+                        //rename title in database sorry =)
+                        selectedOption = "Sports Instructor";
+                        Log.d("where", selectedOption);
+                        //Rename Checkboxes
+                        field1.setText("basketball");
+                        field2.setText("badminton");
+                        field3.setText("swimming");
+                        field4.setText("volleyball");
+                    }
+                }
+            }
+        });
+
 
         profilePictureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,10 +132,51 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //EditText
+                description = (EditText) findViewById(R.id.etDescription);
+                IDNumber = (EditText) findViewById(R.id.etIDNumber);
+                reason = (EditText) findViewById(R.id.reasonET);
+                fromTime = (EditText) findViewById(R.id.fromtimeET);
+                toTime = (EditText) findViewById(R.id.totimeET);
+                trainerFacility = (EditText) findViewById(R.id.facilityadd);
+                trainerPrice = (EditText) findViewById(R.id.trainerspriceET);
+                //CheckBox
+                monday= (CheckBox) findViewById(R.id.Monday);
+                tuesday = (CheckBox) findViewById(R.id.Tuesday);
+                wednesday = (CheckBox) findViewById(R.id.Wednesday);
+                thursday = (CheckBox) findViewById(R.id.Thursday);
+                friday = (CheckBox) findViewById(R.id.Friday);
+                saturday = (CheckBox) findViewById(R.id.Saturday);
+                sunday = (CheckBox) findViewById(R.id.Sunday);
+                am = (CheckBox) findViewById(R.id.fromamCB);
+                pm = (CheckBox) findViewById(R.id.frompmCB);
+
+                String Description = description.getText().toString();
+                String IDNum = IDNumber.getText().toString();
+                String Reason = reason.getText().toString();
+                String FromTime = fromTime.getText().toString();
+                String ToTime = toTime.getText().toString();
+                String TrainerFacility = trainerFacility.getText().toString();
+                String TrainerPrice = trainerPrice.getText().toString();
+                //
+                String F1 = field1.getText().toString();
+                String F2 = field2.getText().toString();
+                String F3 = field3.getText().toString();
+                String F4 = field4.getText().toString();
+
+                Log.d("where", F1 + " " + F2 + " " + F3 + " " + F4);
+
+
+
+
+
+                //showConfimation Dialog + upload to Firebase Storage
                 showConfirmationDialog();
+
             }
         });
     }
+    // Add a void where all strings are stored in variable
 
     private void openFileChooserProfilePicture() {
         Intent intent = new Intent();

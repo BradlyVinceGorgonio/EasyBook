@@ -31,6 +31,10 @@ public class AcceptRejectTrainerFragment extends Fragment {
     private String schedule;
     private String location;
     private String level;
+    private String age;
+    private String contactNumber;
+    // LAST PART - Initialize all description. And fix 2 buttons accept reject
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,7 +78,6 @@ public class AcceptRejectTrainerFragment extends Fragment {
         CollectionReference trainerRef = db.collection("trainer");
         CollectionReference bookingRequestRef = trainerRef.document(trainerId).collection("booking_request");
 
-        Log.d("what", "fetchDataFromFirestore: Im here");
         //// ERORRR ERRRRRRRRRORR ERORRRRRRRRRRRRRRRRRRRRRRRRR
         bookingRequestRef.document(clientId).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -89,7 +92,7 @@ public class AcceptRejectTrainerFragment extends Fragment {
                     schedule = document.getString("schedule");
                     location = document.getString("location");
                     level = document.getString("level");
-
+                    age = document.getString("age");
                     // Do something with the retrieved fields
                     Log.d("what", "Name: " + name);
                     Log.d("what", "UID: " + uid);
@@ -100,6 +103,17 @@ public class AcceptRejectTrainerFragment extends Fragment {
                     Log.d("what", "level: " + level);
                     Log.d("what", "location: " + location);
 
+                    TextView clientName = (TextView) getView().findViewById(R.id.ClientName);
+                    TextView clientAge = (TextView) getView().findViewById(R.id.clientAge);
+                    TextView clientContact = (TextView) getView().findViewById(R.id.clientContact);
+                    TextView clientAddress = (TextView) getView().findViewById(R.id.clientAddress);
+                    TextView clientCity = (TextView) getView().findViewById(R.id.clientCity);
+                    TextView clientZipCode = (TextView) getView().findViewById(R.id.clientZipCode);
+                    TextView clientMedHistory = (TextView) getView().findViewById(R.id.clientMedHistory);
+                    TextView clientSchedule = (TextView) getView().findViewById(R.id.clientSchedule);
+
+
+                    clientName.setText(name);
 
 
 

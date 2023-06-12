@@ -186,34 +186,36 @@
                 android:textSize="20sp"></TextView>
 
 
-            <CheckBox
-                android:id="@+id/martialbox"
+            <RadioGroup
+                android:id="@+id/categoryGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="30dp"
-                android:text="Martial Arts Instructor"
-                android:textSize="20dp">
+                android:layout_marginLeft="30dp">
 
-            </CheckBox>
+                <RadioButton
+                    android:id="@+id/martialRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Martial Arts Instructor"
+                    android:textSize="20dp" />
 
-            <CheckBox
-                android:id="@+id/fitnessbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="30dp"
-                android:text="Fitness Instructor"
-                android:textSize="20dp"></CheckBox>
+                <RadioButton
+                    android:id="@+id/fitnessRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fitness Instructor"
+                    android:textSize="20dp" />
 
-            <CheckBox
-                android:id="@+id/sportsbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="30dp"
-                android:text="Sports Instructor"
-                android:textSize="20dp"></CheckBox>
+                <RadioButton
+                    android:id="@+id/sportsRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sports Instructor"
+                    android:textSize="20dp" />
+
+            </RadioGroup>
+
 
 
             <TextView
