@@ -30,6 +30,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,9 +44,9 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
 
     private Button profilePictureBtn, validIdBtn, documentBtn;
     private EditText description, IDNumber, reason, fromTime, toTime, trainerFacility, trainerPrice;
-    private CheckBox field1, field2, field3,field4, monday,tuesday,wednesday,thursday,friday,saturday,sunday, am, pm;
+    private CheckBox field1, field2, field3,field4, monday,tuesday,wednesday,thursday,friday,saturday,sunday;
 
-    private RadioGroup categoryGroup;
+    private RadioGroup categoryGroup, fromGroup, toGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,29 +62,39 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
         field2 = (CheckBox) findViewById(R.id.field2);
         field3 = (CheckBox) findViewById(R.id.field3);
         field4 = (CheckBox) findViewById(R.id.field4);
+        //CheckBox
+        monday= (CheckBox) findViewById(R.id.Monday);
+        tuesday = (CheckBox) findViewById(R.id.Tuesday);
+        wednesday = (CheckBox) findViewById(R.id.Wednesday);
+        thursday = (CheckBox) findViewById(R.id.Thursday);
+        friday = (CheckBox) findViewById(R.id.Friday);
+        saturday = (CheckBox) findViewById(R.id.Saturday);
+        sunday = (CheckBox) findViewById(R.id.Sunday);
+
+        final String[] selectedCategory = {null};
         categoryGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton selectedRadioButton = findViewById(checkedId);
                 if (selectedRadioButton != null) {
                     // Handle the selected option
-                    String selectedOption = selectedRadioButton.getText().toString();
+                    selectedCategory[0] = selectedRadioButton.getText().toString();
                     // Do something with the selected option
-                    Log.d("Selected Option", selectedOption);
+                    Log.d("Selected Option", selectedCategory[0]);
 
 
-                    if(selectedOption.equals("Martial Arts Instructor"))
+                    if(selectedCategory[0].equals("Martial Arts Instructor"))
                     {
                         field1.setText("judo");
                         field2.setText("karate");
                         field3.setText("taekwondo");
                         field4.setText("boxing");
                     }
-                    else if(selectedOption.equals("Fitness Instructor"))
+                    else if(selectedCategory[0].equals("Fitness Instructor"))
                     {
                         //rename title in database sorry =)
-                        selectedOption = "Fitness Trainer";
-                        Log.d("where", selectedOption);
+                        selectedCategory[0] = "Fitness Trainer";
+                        Log.d("where", selectedCategory[0]);
 
                         field1.setText("Calisthenics");
                         field2.setText("Athletic");
@@ -91,11 +102,10 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                         field4.setText("Gymnastics");
 
                     }
-                    else if(selectedOption.equals("Sports Instructor"))
+                    else if(selectedCategory[0].equals("Sports Instructor"))
                     {
                         //rename title in database sorry =)
-                        selectedOption = "Sports Instructor";
-                        Log.d("where", selectedOption);
+                        Log.d("where", selectedCategory[0]);
                         //Rename Checkboxes
                         field1.setText("basketball");
                         field2.setText("badminton");
@@ -105,6 +115,41 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                 }
             }
         });
+        fromGroup = findViewById(R.id.fromTimeGroup);
+
+        final String[] selectedFrom = {null};
+        fromGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selectedRadioButton = findViewById(checkedId);
+                if (selectedRadioButton != null) {
+                    // Handle the selected option
+                    selectedFrom[0] = selectedRadioButton.getText().toString();
+                    // Do something with the selected option
+                    Log.d("Selected Option", selectedFrom[0]);
+
+                }
+            }
+        });
+
+        toGroup = findViewById(R.id.toTimeGroup);
+
+        final String[] selectedTo = {null};
+        toGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton selectedRadioButton = findViewById(checkedId);
+                if (selectedRadioButton != null) {
+                    // Handle the selected option
+                    selectedTo[0] = selectedRadioButton.getText().toString();
+                    // Do something with the selected option
+                    Log.d("Selected Option", selectedTo[0]);
+
+                }
+            }
+        });
+
+
 
 
         profilePictureBtn.setOnClickListener(new View.OnClickListener() {
@@ -141,15 +186,67 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                 trainerFacility = (EditText) findViewById(R.id.facilityadd);
                 trainerPrice = (EditText) findViewById(R.id.trainerspriceET);
                 //CheckBox
-                monday= (CheckBox) findViewById(R.id.Monday);
-                tuesday = (CheckBox) findViewById(R.id.Tuesday);
-                wednesday = (CheckBox) findViewById(R.id.Wednesday);
-                thursday = (CheckBox) findViewById(R.id.Thursday);
-                friday = (CheckBox) findViewById(R.id.Friday);
-                saturday = (CheckBox) findViewById(R.id.Saturday);
-                sunday = (CheckBox) findViewById(R.id.Sunday);
-                am = (CheckBox) findViewById(R.id.fromamCB);
-                pm = (CheckBox) findViewById(R.id.frompmCB);
+
+
+                //
+
+                ArrayList<String> checkedFields = new ArrayList<>();
+
+                if (field1.isChecked()) {
+                    checkedFields.add(field1.getText().toString());
+                }
+
+                if (field2.isChecked()) {
+                    checkedFields.add(field2.getText().toString());
+                }
+
+                if (field3.isChecked()) {
+                    checkedFields.add(field3.getText().toString());
+                }
+
+                if (field4.isChecked()) {
+                    checkedFields.add(field4.getText().toString());
+                }
+
+                ArrayList<String> checkedDays = new ArrayList<>();
+                if (monday.isChecked()) {
+                    checkedDays.add(monday.getText().toString());
+                }
+                if (tuesday.isChecked()) {
+                    checkedDays.add(tuesday.getText().toString());
+                }
+                if (wednesday.isChecked()) {
+                    checkedDays.add(wednesday.getText().toString());
+                }
+                if (thursday.isChecked()) {
+                    checkedDays.add(thursday.getText().toString());
+                }
+                if (friday.isChecked()) {
+                    checkedDays.add(friday.getText().toString());
+                }
+                if (saturday.isChecked()) {
+                    checkedDays.add(saturday.getText().toString());
+                }
+                if (sunday.isChecked()) {
+                    checkedDays.add(sunday.getText().toString());
+                }
+
+                //Array of Checked field  // name : checkedItems
+                //Array of Checked Days
+                Log.d("where", selectedFrom[0] + " Outside");
+                Log.d("where", selectedTo[0] + " Outside");
+                Log.d("where", selectedCategory[0] + " outside");
+
+                String from = selectedFrom[0];
+                String to = selectedTo[0];
+                String category = selectedCategory[0];
+
+                for(int x = 0; x < checkedDays.size(); x++)
+                {
+                    checkedDays.set(x, checkedDays.get(x) + " 8:00 " + from + " - " + "12:30 " + to);
+                }
+                Log.d("where", checkedDays.toString());
+                Log.d("where", category);
 
                 String Description = description.getText().toString();
                 String IDNum = IDNumber.getText().toString();
@@ -158,25 +255,22 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                 String ToTime = toTime.getText().toString();
                 String TrainerFacility = trainerFacility.getText().toString();
                 String TrainerPrice = trainerPrice.getText().toString();
-                //
-                String F1 = field1.getText().toString();
-                String F2 = field2.getText().toString();
-                String F3 = field3.getText().toString();
-                String F4 = field4.getText().toString();
 
-                Log.d("where", F1 + " " + F2 + " " + F3 + " " + F4);
+                //checkedDays array
+                //checkedFields array
+                //from
+                //to
 
 
 
 
 
                 //showConfimation Dialog + upload to Firebase Storage
-                showConfirmationDialog();
+                showConfirmationDialog(Description, IDNum, Reason, TrainerFacility, TrainerPrice, checkedDays, checkedFields, category);
 
             }
         });
     }
-    // Add a void where all strings are stored in variable
 
     private void openFileChooserProfilePicture() {
         Intent intent = new Intent();
@@ -266,7 +360,7 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
         return result;
     }
 
-    private void showConfirmationDialog() {
+    private void showConfirmationDialog(String Description, String IDNum, String Reason, String TrainerFacility, String TrainerPrice, ArrayList checkedDays, ArrayList checkedFields, String category) {
         // ...
 
         // Upload the file names to Firestore
@@ -274,6 +368,16 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
         bookingRequestData.put("profilePictureFileName", profilePictureBtn.getText().toString());
         bookingRequestData.put("validIdFileName", validIdBtn.getText().toString());
         bookingRequestData.put("documentFileName", documentBtn.getText().toString());
+        // Include the parameters in the document fields
+        bookingRequestData.put("Description", Description);
+        bookingRequestData.put("IDNum", IDNum);
+        bookingRequestData.put("Reason", Reason);
+        bookingRequestData.put("TrainerFacility", TrainerFacility);
+        bookingRequestData.put("TrainerPrice", TrainerPrice);
+        bookingRequestData.put("checkedDays", checkedDays);
+        bookingRequestData.put("checkedFields", checkedFields);
+        bookingRequestData.put("category", category);
+
 
         // Create a new document in the "booking_request" subcollection of the current user
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -287,6 +391,7 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                 .collection("trainer_request")
                 .document(currentUserId)
                 .set(bookingRequestData)
+                //Add the Checked Array here
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

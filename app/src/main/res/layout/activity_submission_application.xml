@@ -382,30 +382,29 @@
                 android:layout_marginLeft="140dp"
                 android:layout_marginTop="-30sp">
 
-                <LinearLayout
+                <RadioGroup
+                    android:id="@+id/fromTimeGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <CheckBox
-                        android:id="@+id/fromamCB"
+                    <RadioButton
+                        android:id="@+id/fromamRB"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="AM "
-                        android:textSize="10sp">
+                        android:layout_height="wrap_content"
+                        android:text="AM"
+                        android:textSize="10sp" />
 
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/frompmCB"
+                    <RadioButton
+                        android:id="@+id/frompmRB"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="PM "
-                        android:textSize="10sp">
+                        android:layout_height="wrap_content"
+                        android:text="PM"
+                        android:textSize="10sp" />
 
-                    </CheckBox>
-                </LinearLayout>
+                </RadioGroup>
             </ScrollView>
+
 
 
             <TextView
@@ -432,30 +431,29 @@
                 android:layout_marginLeft="330dp"
                 android:layout_marginTop="-30sp">
 
-                <LinearLayout
+                <RadioGroup
+                    android:id="@+id/toTimeGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <CheckBox
-                        android:id="@+id/toamCB"
+                    <RadioButton
+                        android:id="@+id/toamRB"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="AM "
-                        android:textSize="10sp">
+                        android:layout_height="wrap_content"
+                        android:text="AM"
+                        android:textSize="10sp" />
 
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/topmCB"
+                    <RadioButton
+                        android:id="@+id/topmRB"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="PM "
-                        android:textSize="10sp">
+                        android:layout_height="wrap_content"
+                        android:text="PM"
+                        android:textSize="10sp" />
 
-                    </CheckBox>
-                </LinearLayout>
+                </RadioGroup>
             </ScrollView>
+
 
 
             <TextView
