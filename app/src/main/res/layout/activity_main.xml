@@ -51,7 +51,8 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/emailLgn"
@@ -64,7 +65,8 @@
                 android:textColorHighlight="@color/cardview_dark_background"
                 android:layout_marginTop="40dp"/>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/passwordLgn"
@@ -107,7 +109,7 @@
         android:id="@+id/createAccBtnR"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="1dp"
         android:backgroundTint="@color/black"
         android:text="Create Account"
         android:textSize="18sp"

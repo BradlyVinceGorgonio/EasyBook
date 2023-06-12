@@ -42,7 +42,7 @@
         android:id="@+id/cardView3"
         android:layout_width="383dp"
         android:layout_height="445dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="14dp"
         android:layout_marginBottom="140dp"
         android:background="@drawable/custom_edittext"
         app:cardCornerRadius="30dp"
@@ -50,7 +50,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.017"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,8 +59,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="-0dp"
             android:orientation="vertical"
-            android:padding="24dp">
-
+            android:padding="15dp">
 
 
             <EditText
@@ -67,9 +67,11 @@
                 android:layout_width="170dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft=""
                 android:ems="10"
-                android:hint="Name"
+                android:hint=" Name"
                 android:inputType="text"
+                android:background="@drawable/textview_border"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.066"
@@ -83,8 +85,9 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="180dp"
                 android:layout_marginTop="-52dp"
+                android:background="@drawable/textview_border"
                 android:ems="10"
-                android:hint="Last name"
+                android:hint=" Last name"
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +102,8 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:ems="10"
-                android:hint="Age"
+                android:hint=" Age"
+                android:background="@drawable/textview_border"
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -109,10 +113,6 @@
                 app:layout_constraintVertical_bias="0.021" />
 
 
-
-
-
-
             <EditText
                 android:id="@+id/gender"
                 android:layout_width="170dp"
@@ -120,7 +120,8 @@
                 android:layout_marginLeft="180dp"
                 android:layout_marginTop="-50dp"
                 android:ems="10"
-                android:hint="Gender"
+                android:hint=" Gender"
+                android:background="@drawable/textview_border"
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -135,12 +136,13 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="180dp"
                 android:layout_marginTop="15dp"
-                android:inputType="datetime"
                 android:digits="0123456789-"
+                android:hint=" DD-MM-YYYY"
+                android:background="@drawable/textview_border"
+                android:inputType="datetime"
+                android:maxLines="1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gender"
-                android:hint="DD-MM-YYYY"
-                android:maxLines="1" />
+                app:layout_constraintTop_toBottomOf="@+id/gender" />
 
             <EditText
                 android:id="@+id/contactNumber"
@@ -148,7 +150,8 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="-50dp"
                 android:ems="10"
-                android:hint="Contact number: "
+                android:background="@drawable/textview_border"
+                android:hint=" Contact "
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -159,12 +162,13 @@
 
             <EditText
                 android:id="@+id/address"
-                android:layout_width="360dp"
+                android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:ems="10"
                 android:foregroundTint="@color/black"
-                android:hint="Address"
+                android:background="@drawable/textview_border"
+                android:hint=" Address"
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -175,11 +179,12 @@
 
             <EditText
                 android:id="@+id/city"
-                android:layout_width="360dp"
+                android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:ems="10"
-                android:hint="City"
+                android:hint=" City"
+                android:background="@drawable/textview_border"
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -190,11 +195,12 @@
 
             <EditText
                 android:id="@+id/Zipcode"
-                android:layout_width="360dp"
+                android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:ems="10"
-                android:hint="Zip-code"
+                android:hint=" Zip-code"
+                android:background="@drawable/textview_border"
                 android:inputType="text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
