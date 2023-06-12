@@ -29,14 +29,14 @@
 
                 <TextView
                     android:id="@+id/displayUserName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="390dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:shadowRadius="1"
                     android:text="Hi!, welcome "
                     android:textColor="@color/white"
-                    android:textSize="30dp"></TextView>
+                    android:textSize="25dp"></TextView>
 
             </LinearLayout>
 
