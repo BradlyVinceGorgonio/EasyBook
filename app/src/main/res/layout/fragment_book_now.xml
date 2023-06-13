@@ -220,7 +220,7 @@
                             android:id="@+id/facilityadd"
                             android:layout_width="300dp"
                             android:layout_height="80dp"
-                            android:layout_marginLeft="-280dp"
+                            android:layout_marginLeft="-305dp"
                             android:layout_marginTop="240dp"
                             android:layout_marginBottom="20dp"
                             android:background="@drawable/custom_edittext"
