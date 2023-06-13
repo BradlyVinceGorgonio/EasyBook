@@ -151,17 +151,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="50dp"
-                android:text="Address: "
+                android:text="Description:"
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/trainersAddress"
+                android:id="@+id/trainersDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="107dp"
+                android:layout_marginLeft="130dp"
                 android:layout_marginTop="-26.5dp"
                 android:background="@drawable/textview_border"
-                android:text="Trainer's Address"
+                android:text="Trainer's Description"
                 android:textSize="20dp" />
 
 

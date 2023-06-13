@@ -4,8 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +20,8 @@ import java.util.List;
 
 public class AcceptRejectAdminActivity extends AppCompatActivity {
 
+    private Button trainersAccept, trainersReject;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +31,6 @@ public class AcceptRejectAdminActivity extends AppCompatActivity {
         Log.d("taeka", adminId);
 
         fetchDataFromFirestore(adminId);
-
-
 
 
     }
@@ -55,9 +56,10 @@ public class AcceptRejectAdminActivity extends AppCompatActivity {
 
                             String name = document.getString("name");
                             String age = document.getString("age");
-                            String category = document.getString("category");
-                            List<String> field = (List<String>) document.get("category_field");
-                            List<String> schedule = (List<String>) document.get("schedule_day");
+                            String category = document.getString("category"); //
+                            List<String> field = (List<String>) document.get("category_field"); //
+                            List<String> schedule = (List<String>) document.get("schedule_day"); //
+                            String description = document.getString("description");
 
                             String Address = document.getString("Address");
                             String idNum = document.getString("id_number");
@@ -79,9 +81,10 @@ public class AcceptRejectAdminActivity extends AppCompatActivity {
                             TextView TextField = (TextView) findViewById(R.id.trainersField);
                             TextView TextFacility = (TextView) findViewById(R.id.trainersFacility);
                             TextView TextPrice = (TextView) findViewById(R.id.trainersPrice);
-                            TextView TextAddress = (TextView) findViewById(R.id.trainersAddress);
+                            TextView TextDescription = (TextView) findViewById(R.id.trainersDescription);
                             TextView IDnum = (TextView) findViewById(R.id.trainerIDNumber);
                             TextView TextSched = (TextView) findViewById(R.id.scheduleAdmin);
+
 
                             Textname.setText(name);
                             TextAge.setText(age);
@@ -89,7 +92,7 @@ public class AcceptRejectAdminActivity extends AppCompatActivity {
                             TextField.setText(fieldString);
                             TextFacility.setText(facility);
                             TextPrice.setText(price);
-                            TextAddress.setText(Address);
+                            TextDescription.setText(description);
                             IDnum.setText(idNum);
                             TextSched.setText(scheduleString);
 
@@ -145,6 +148,23 @@ public class AcceptRejectAdminActivity extends AppCompatActivity {
                                 // Handle the failure scenario
                             });
 
+
+                            trainersAccept = findViewById(R.id.trainersAccept);
+                            trainersReject = findViewById(R.id.trainersReject);
+
+                            trainersAccept.setOnClickListener(new View.OnClickListener()
+                            {
+                                @Override
+                                public void onClick(View view)
+                                {
+
+                                }
+                            });
+
+
+
+
+
                         } else {
                             // Document doesn't exist
                         }
@@ -153,5 +173,4 @@ public class AcceptRejectAdminActivity extends AppCompatActivity {
                     }
                 });
     }
-
 }
