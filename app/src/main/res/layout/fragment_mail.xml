@@ -75,6 +75,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:drawableLeft="@drawable/baseline_mark_email_unread_24"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -82,13 +87,8 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/textview_border"
-                            android:text="Today, 2:15pm"
+                            android:text="Today, 2:14pm"
                             android:textSize="16dp"></TextView>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
 
                         <TextView
                             android:layout_width="wrap_content"
