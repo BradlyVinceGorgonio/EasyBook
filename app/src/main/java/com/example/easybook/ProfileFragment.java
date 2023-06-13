@@ -68,6 +68,7 @@ public class ProfileFragment extends Fragment {
         Fragment fragment = null;
 
         switch (buttonName) {
+            /*
             case "User Settings":
                 // fragment = new UserSettingsFragment();
                 break;
@@ -80,11 +81,13 @@ public class ProfileFragment extends Fragment {
             case "Contact Us":
                 // fragment = new ContactUsFragment();
                 break;
-            case "Apply as a Customer Trainer":
-                fragment = new ApplyAsCostumerTrainerFragment();
-                break;
             case "Change Password":
                 // fragment = new ChangePasswordFragment();
+                break;
+
+             */
+            case "Apply as a Customer Trainer":
+                fragment = new ApplyAsCostumerTrainerFragment();
                 break;
             case "Logout":
                 logout();
