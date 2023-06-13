@@ -11,12 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AcceptRejectAdminActivity extends AppCompatActivity {
 
@@ -97,12 +100,6 @@ public class AcceptRejectAdminActivity extends AppCompatActivity {
                             TextSched.setText(scheduleString);
 
 
-
-
-
-
-
-
                             // Fetch the profile picture URL from Firebase Storage
                             String imagePath = "applying_trainer_images/" + uid + "/" + profilePictureUrl;
                             StorageReference storageRef = FirebaseStorage.getInstance().getReference().child(imagePath);
@@ -157,6 +154,95 @@ public class AcceptRejectAdminActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(View view)
                                 {
+                                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                    DocumentReference costumerRef = db.collection("costumer").document(documentId);
+
+                                    costumerRef.get()
+                                            .addOnSuccessListener(documentSnapshot -> {
+                                                if (documentSnapshot.exists()) {
+                                                    String zipcode = documentSnapshot.getString("Zipcode");
+                                                    String birthdate = documentSnapshot.getString("birth date");
+                                                    String contactNum = documentSnapshot.getString("contact number");
+                                                    String firstName = documentSnapshot.getString("first name");
+                                                    String gender = documentSnapshot.getString("gender");
+                                                    String lastName = documentSnapshot.getString("last name");
+                                                    String username = documentSnapshot.getString("username");
+
+                                                    // Use the retrieved information as needed
+
+                                                    DocumentReference trainerRef = db.collection("trainer").document(documentId);
+
+                                                    Map<String, Object> data = new HashMap<>();
+                                                    data.put("profilePictureUrl", profilePictureUrl);
+                                                    data.put("uid", uid);
+                                                    data.put("name", name);
+                                                    data.put("age", age);
+                                                    data.put("category", category);
+                                                    data.put("category_field", field);
+                                                    data.put("schedule_day", schedule);
+                                                    data.put("description", description);
+                                                    data.put("Address", Address);
+                                                    data.put("trainer facility", facility);
+                                                    int number;
+                                                    number = Integer.parseInt(price);
+                                                    data.put("price", number);
+                                                    data.put("Zipcode", zipcode);
+                                                    data.put("birth date", birthdate);
+                                                    data.put("contact number", contactNum);
+                                                    data.put("first name", firstName);
+                                                    data.put("gender", gender);
+                                                    data.put("last name", lastName);
+                                                    data.put("username", username);
+
+
+                                                    trainerRef.set(data)
+                                                            .addOnSuccessListener(aVoid -> {
+
+                                                                Log.d("deleters", "Success data add");
+                                                            })
+                                                            .addOnFailureListener(e -> {
+                                                                // Error sending document
+                                                            });
+                                                    DocumentReference requestRef = db.collection("admin")
+                                                            .document(adminAccount)
+                                                            .collection("trainer_request")
+                                                            .document(documentId);
+
+                                                    requestRef.delete()
+                                                            .addOnSuccessListener(aVoid -> {
+                                                                // Document successfully deleted
+                                                            })
+                                                            .addOnFailureListener(e -> {
+                                                                // Error deleting document
+                                                            });
+
+                                                } else {
+                                                    // Document doesn't exist
+                                                }
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                // Error retrieving document
+                                            });
+
+                                }
+                            });
+
+                            trainersReject.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                    DocumentReference requestRef = db.collection("admin")
+                                            .document(adminAccount)
+                                            .collection("trainer_request")
+                                            .document(documentId);
+
+                                    requestRef.delete()
+                                            .addOnSuccessListener(aVoid -> {
+                                                Log.d("deleters", "Success doc deleted");
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                // Error deleting document
+                                            });
 
                                 }
                             });
