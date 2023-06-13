@@ -84,27 +84,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView6"
                     app:layout_constraintVertical_bias="0.048" />
 
-                <ScrollView
-                    android:id="@+id/scrollView4"
-                    android:layout_width="170dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="205dp"
-                    android:layout_marginTop="-30dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView8"
-                    app:layout_constraintEnd_toEndOf="@+id/textView7"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView7">
 
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <RadioGroup
                             android:id="@+id/radio_group"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp">
 
                             <RadioButton
                                 android:id="@+id/Beginner"
@@ -135,10 +123,6 @@
                                 android:textSize="23dp" />
 
                         </RadioGroup>
-
-                    </LinearLayout>
-
-                </ScrollView>
 
                 <TextView
                     android:id="@+id/textView8"
@@ -205,10 +189,7 @@
                             android:text="Do you have any medical condtion?"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            app:layout_constraintBottom_toTopOf="@+id/medicalconditionET"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/availabledates" />
+                         />
 
                         <EditText
                             android:id="@+id/medicalconditionET"
@@ -219,10 +200,7 @@
                             android:background="@drawable/custom_edittext"
                             android:hint="N/A if none, Eleborate if Yes"
                             android:textAlignment="center"
-                            app:layout_constraintBottom_toTopOf="@+id/textView9"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                           />
 
 
                         <TextView
@@ -234,10 +212,7 @@
                             android:text="Enter your preferred location:"
                             android:textColor="@color/black"
                             android:textSize="20dp"
-                            app:layout_constraintBottom_toTopOf="@+id/facilityadd"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/medicalconditionET" />
+                            />
 
                         <EditText
                             android:id="@+id/facilityadd"
@@ -248,10 +223,7 @@
                             android:background="@drawable/custom_edittext"
                             android:hint=" Enter your training facility address:"
                             android:textSize="23sp"
-                            app:layout_constraintBottom_toTopOf="@+id/booktrainer"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView9"></EditText>
+                       ></EditText>
 
 
                     </LinearLayout>
