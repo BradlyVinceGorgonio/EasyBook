@@ -255,15 +255,18 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Monday 8AM - 5PM"/>
+                android:text="Monday 8AM - 5PM"
+                android:textSize="20dp"/>
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Wednesday 8AM - 5PM"/>
+                android:text="Wednesday 8AM - 5PM"
+                android:textSize="20dp"/>
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Friday 8AM - 5PM"/>
+                android:text="Friday 8AM - 5PM"
+                android:textSize="20dp"/>
 
 
 
