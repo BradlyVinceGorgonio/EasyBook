@@ -14,7 +14,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -142,7 +142,7 @@
                 <ScrollView
                     android:id="@+id/availabledates"
                     android:layout_width="200dp"
-                    android:layout_height="70dp"
+                    android:layout_height="60dp"
                     android:layout_marginLeft="190dp"
                     android:layout_marginTop="-30dp"
                     app:layout_constraintBottom_toTopOf="@+id/textView10"
@@ -218,7 +218,7 @@
                             android:id="@+id/facilityadd"
                             android:layout_width="300dp"
                             android:layout_height="80dp"
-                            android:layout_marginLeft="-305dp"
+                            android:layout_marginLeft="-280dp"
                             android:layout_marginTop="240dp"
                             android:background="@drawable/custom_edittext"
                             android:hint=" Enter your training facility address:"
