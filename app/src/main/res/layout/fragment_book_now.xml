@@ -146,6 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="vertical">
 
                         <RadioGroup
@@ -212,7 +213,7 @@
                             android:id="@+id/facilityadd"
                             android:layout_width="300dp"
                             android:layout_height="80dp"
-                            android:layout_marginLeft="-255dp"
+                            android:layout_marginLeft="-250dp"
                             android:layout_marginTop="240dp"
                             android:layout_marginBottom="20dp"
                             android:background="@drawable/custom_edittext"
@@ -302,7 +303,7 @@
                     android:id="@+id/confirmBook"
                     android:layout_width="158dp"
                     android:layout_height="73dp"
-                    android:layout_marginLeft="130dp"
+                    android:layout_marginLeft="140dp"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="@color/black"
                     android:text="Confirm Booking"
