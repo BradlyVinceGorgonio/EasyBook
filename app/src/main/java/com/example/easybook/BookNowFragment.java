@@ -231,9 +231,8 @@ public class BookNowFragment extends Fragment {
         bookingData.put("gender", gender);
         bookingData.put("contact number", contact);
         //goal
-        bookingData.put("gender", gender);
-        //location
         bookingData.put("location", facilityAddress);
+        bookingData.put("medical condition", medicalCondition);
         bookingData.put("timestamp", FieldValue.serverTimestamp());
 
         // Add the booking data to the document

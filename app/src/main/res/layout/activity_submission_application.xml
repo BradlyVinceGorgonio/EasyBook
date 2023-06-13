@@ -481,9 +481,9 @@
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="80dp"
                 android:layout_marginTop="20dp"
-                android:text="Enter your Price"
+                android:text="Enter your price per session"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 

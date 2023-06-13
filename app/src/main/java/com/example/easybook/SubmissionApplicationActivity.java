@@ -22,9 +22,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -231,6 +235,9 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                     checkedDays.add(sunday.getText().toString());
                 }
 
+                String FromTime = fromTime.getText().toString();
+                String ToTime = toTime.getText().toString();
+
                 //Array of Checked field  // name : checkedItems
                 //Array of Checked Days
                 Log.d("where", selectedFrom[0] + " Outside");
@@ -243,7 +250,7 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
 
                 for(int x = 0; x < checkedDays.size(); x++)
                 {
-                    checkedDays.set(x, checkedDays.get(x) + " 8:00 " + from + " - " + "12:30 " + to);
+                    checkedDays.set(x, checkedDays.get(x) + " "+ FromTime+" " + from + " - " + ToTime+" " + to);
                 }
                 Log.d("where", checkedDays.toString());
                 Log.d("where", category);
@@ -251,8 +258,7 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                 String Description = description.getText().toString();
                 String IDNum = IDNumber.getText().toString();
                 String Reason = reason.getText().toString();
-                String FromTime = fromTime.getText().toString();
-                String ToTime = toTime.getText().toString();
+
                 String TrainerFacility = trainerFacility.getText().toString();
                 String TrainerPrice = trainerPrice.getText().toString();
 
@@ -261,12 +267,43 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                 //from
                 //to
 
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                String currentUserId = firebaseAuth.getCurrentUser().getUid();
+
+                DocumentReference userRef = db.collection("costumer").document(currentUserId);
+
+                userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // Document exists, retrieve fields
+                                String names = document.getString("name");
+                                String ages = document.getString("age");
+                                String Addresss = document.getString("Address");
+                                String uid = document.getString("uid");
+
+                                showConfirmationDialog(Description, IDNum, Reason, TrainerFacility, TrainerPrice, checkedDays, checkedFields, category, names, ages, Addresss, uid);
+
+                            } else {
+                                // Document does not exist
+                                // Handle the case when the document does not exist
+                            }
+                        } else {
+                            // Error retrieving the document
+                            // Handle the error or display an error message
+                        }
+                    }
+                });
+
 
 
 
 
                 //showConfimation Dialog + upload to Firebase Storage
-                showConfirmationDialog(Description, IDNum, Reason, TrainerFacility, TrainerPrice, checkedDays, checkedFields, category);
+
 
             }
         });
@@ -304,15 +341,15 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
             switch (requestCode) {
                 case PICK_IMAGE_REQUEST_PROFILE:
                     profilePictureBtn.setText(fileName);
-                    uploadImageToStorage("profile_picture.jpg", imageUri);
+                    uploadImageToStorage(fileName, imageUri);
                     break;
                 case PICK_IMAGE_REQUEST_VALID_ID:
                     validIdBtn.setText(fileName);
-                    uploadImageToStorage("valid_id.jpg", imageUri);
+                    uploadImageToStorage(fileName, imageUri);
                     break;
                 case PICK_IMAGE_REQUEST_DOCUMENT:
                     documentBtn.setText(fileName);
-                    uploadImageToStorage("document.jpg", imageUri);
+                    uploadImageToStorage(fileName, imageUri);
                     break;
             }
         }
@@ -360,23 +397,27 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
         return result;
     }
 
-    private void showConfirmationDialog(String Description, String IDNum, String Reason, String TrainerFacility, String TrainerPrice, ArrayList checkedDays, ArrayList checkedFields, String category) {
+    private void showConfirmationDialog(String Description, String IDNum, String Reason, String TrainerFacility, String TrainerPrice, ArrayList checkedDays, ArrayList checkedFields, String category, String name, String age, String Address, String uid) {
         // ...
 
         // Upload the file names to Firestore
         Map<String, Object> bookingRequestData = new HashMap<>();
-        bookingRequestData.put("profilePictureFileName", profilePictureBtn.getText().toString());
+        bookingRequestData.put("profilePictureUrl", profilePictureBtn.getText().toString());
         bookingRequestData.put("validIdFileName", validIdBtn.getText().toString());
         bookingRequestData.put("documentFileName", documentBtn.getText().toString());
         // Include the parameters in the document fields
-        bookingRequestData.put("Description", Description);
-        bookingRequestData.put("IDNum", IDNum);
-        bookingRequestData.put("Reason", Reason);
-        bookingRequestData.put("TrainerFacility", TrainerFacility);
-        bookingRequestData.put("TrainerPrice", TrainerPrice);
-        bookingRequestData.put("checkedDays", checkedDays);
-        bookingRequestData.put("checkedFields", checkedFields);
+        bookingRequestData.put("description", Description);
+        bookingRequestData.put("id_number", IDNum);
+        bookingRequestData.put("reason", Reason);
+        bookingRequestData.put("trainer facility", TrainerFacility);
+        bookingRequestData.put("price", TrainerPrice);
+        bookingRequestData.put("schedule_day", checkedDays);
+        bookingRequestData.put("category_field", checkedFields);
         bookingRequestData.put("category", category);
+        bookingRequestData.put("name", name);
+        bookingRequestData.put("age", age);
+        bookingRequestData.put("Address", Address);
+        bookingRequestData.put("uid", uid);
 
 
         // Create a new document in the "booking_request" subcollection of the current user
@@ -391,7 +432,6 @@ public class SubmissionApplicationActivity extends AppCompatActivity {
                 .collection("trainer_request")
                 .document(currentUserId)
                 .set(bookingRequestData)
-                //Add the Checked Array here
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

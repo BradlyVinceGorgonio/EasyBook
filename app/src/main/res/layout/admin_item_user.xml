@@ -1,0 +1,70 @@
+<!-- item_user.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLayoutAdmin"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginTop="10sp"
+    android:layout_marginBottom="10sp"
+    android:background="@drawable/textview_border">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/trainerDisplayImage"
+
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/personvector"
+            android:background="@drawable/textview_border"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:id="@+id/trainerDisplayName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Name"
+                android:background="@drawable/textview_border"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fitness Instructor"
+                android:id="@+id/trainerDisplayCategory"
+                android:textColor="#D9512C"
+                android:background="@drawable/textview_border"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/trainerDisplayReason"
+                android:text="I want to teach, its my dream"
+                android:textSize="16dp"
+                android:background="@drawable/textview_border"/>
+            <TextView
+                android:id="@+id/trainerDisplayPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price per session: 1400php"
+                android:textSize="14sp"
+                android:background="@drawable/textview_border"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

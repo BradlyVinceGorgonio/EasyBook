@@ -32,6 +32,8 @@ public class AcceptRejectTrainerFragment extends Fragment {
     private String location;
     private String level;
     private String age;
+    private String medicalCondition;
+
     private String contactNumber;
     // LAST PART - Initialize all description. And fix 2 buttons accept reject
 
@@ -83,16 +85,17 @@ public class AcceptRejectTrainerFragment extends Fragment {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
-                    // Retrieve fields from the document
                     name = document.getString("name");
                     uid = document.getString("uid");
                     status = document.getString("status");
-                    // Retrieve other fields as needed
                     timestamp = document.getTimestamp("timestamp");
                     schedule = document.getString("schedule");
                     location = document.getString("location");
                     level = document.getString("level");
                     age = document.getString("age");
+                    medicalCondition = document.getString("medical condition");
+                    contactNumber = document.getString("contact number");
+
                     // Do something with the retrieved fields
                     Log.d("what", "Name: " + name);
                     Log.d("what", "UID: " + uid);
@@ -107,13 +110,16 @@ public class AcceptRejectTrainerFragment extends Fragment {
                     TextView clientAge = (TextView) getView().findViewById(R.id.clientAge);
                     TextView clientContact = (TextView) getView().findViewById(R.id.clientContact);
                     TextView clientAddress = (TextView) getView().findViewById(R.id.clientAddress);
-                    TextView clientCity = (TextView) getView().findViewById(R.id.clientCity);
-                    TextView clientZipCode = (TextView) getView().findViewById(R.id.clientZipCode);
                     TextView clientMedHistory = (TextView) getView().findViewById(R.id.clientMedHistory);
                     TextView clientSchedule = (TextView) getView().findViewById(R.id.clientSchedule);
 
 
                     clientName.setText(name);
+                    clientAge.setText(age);
+                    clientContact.setText(contactNumber);
+                    clientAddress.setText(location);
+                    clientMedHistory.setText(medicalCondition);
+                    clientSchedule.setText(schedule);
 
 
 
