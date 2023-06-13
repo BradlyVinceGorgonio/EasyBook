@@ -83,7 +83,7 @@
                         android:orientation="vertical">
 
 
-                        <EditText
+                        <TextView
                             style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                             android:textColor="@color/black"
                             android:textSize="25dp">
 
-                        </EditText>
+                        </TextView>
 
                 </LinearLayout>
 
@@ -108,7 +108,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="30dp"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="20dp">
 
                     <LinearLayout
 
@@ -168,13 +168,14 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+
                     android:id="@+id/FitnessCardView"
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="30dp"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="20dp">
 
                     <LinearLayout
 
@@ -235,6 +236,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+
                     android:id="@+id/SportsCardView"
                     android:layout_width="match_parent"
                     android:layout_height="173dp"
@@ -242,7 +244,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginBottom="60dp"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="20dp">
 
                     <LinearLayout
 
