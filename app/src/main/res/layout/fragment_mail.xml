@@ -70,7 +70,7 @@
                             style="@style/Widget.MaterialComponents.Snackbar.TextView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"
+                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -83,7 +83,7 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/textview_border"
-                            android:text="Today, 11:24am"
+                            android:text="Today, 2:14pm"
                             android:textSize="16dp"></TextView>
 
                         <TextView
@@ -91,7 +91,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="-110dp"
                             android:layout_marginTop="50dp"
-                            android:text="Thankyou For Registering in Easy Booking"
+                            android:text="Josh Cruz accepted your booking request"
                             android:textSize="17dp">
 
                         </TextView>
@@ -101,7 +101,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="-330dp"
                             android:layout_marginTop="70dp"
-                            android:hint="Looking for book reservation?, instructor?, applying as a trainer?, enjoy using easy booking."
+                            android:hint="Josh Cruz is now your trainer! You can now contact each other. "
                             android:textSize="17dp">
 
                         </TextView>
@@ -127,7 +127,7 @@
                             style="@style/Widget.MaterialComponents.Snackbar.TextView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"
+                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -140,7 +140,7 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/textview_border"
-                            android:text="Today, 11:24am"
+                            android:text="Today, 1:24pm"
                             android:textSize="16dp"></TextView>
 
                         <TextView
@@ -148,7 +148,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="-110dp"
                             android:layout_marginTop="50dp"
-                            android:text="Thankyou For Registering in Easy Booking"
+                            android:text="Josh Cruz received your booking request"
                             android:textSize="17dp">
 
                         </TextView>
@@ -158,7 +158,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="-330dp"
                             android:layout_marginTop="70dp"
-                            android:hint="Looking for book reservation?, instructor?, applying as a trainer?, enjoy using easy booking."
+                            android:hint="Please wait for his confirmation while checking on your profile description"
                             android:textSize="17dp">
 
                         </TextView>
@@ -184,7 +184,7 @@
                             style="@style/Widget.MaterialComponents.Snackbar.TextView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"
+                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -197,7 +197,7 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/textview_border"
-                            android:text="Today, 11:24am"
+                            android:text="Today, 1:24pm"
                             android:textSize="16dp"></TextView>
 
                         <TextView
@@ -205,7 +205,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="-110dp"
                             android:layout_marginTop="50dp"
-                            android:text="Thankyou For Registering in Easy Booking"
+                            android:text="Booking Success!"
                             android:textSize="17dp">
 
                         </TextView>
@@ -213,9 +213,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="-330dp"
+                            android:layout_marginLeft="-160dp"
                             android:layout_marginTop="70dp"
-                            android:hint="Looking for book reservation?, instructor?, applying as a trainer?, enjoy using easy booking."
+                            android:hint="You are about to pay 2,400. See full booking receipt here."
                             android:textSize="17dp">
 
                         </TextView>
@@ -241,7 +241,7 @@
                             style="@style/Widget.MaterialComponents.Snackbar.TextView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"
+                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -299,7 +299,7 @@
                             style="@style/Widget.MaterialComponents.Snackbar.TextView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"
+                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -358,7 +358,7 @@
                             style="@style/Widget.MaterialComponents.Snackbar.TextView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"
+                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -417,7 +417,7 @@
                             style="@style/Widget.MaterialComponents.Snackbar.TextView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"
+                            android:drawableLeft="@drawable/baseline_mark_email_unread_24"/>
                     </LinearLayout>
 
                     <LinearLayout
