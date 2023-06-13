@@ -140,20 +140,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/scrollView4" />
 
-                <ScrollView
-                    android:id="@+id/availabledates"
-                    android:layout_width="200dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="190dp"
-                    android:layout_marginTop="-30dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView10"
-                    app:layout_constraintEnd_toStartOf="@+id/textView10"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8">
+
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
                         android:orientation="vertical">
 
                         <RadioGroup
@@ -165,7 +157,7 @@
 
                     </LinearLayout>
 
-                </ScrollView>
+
 
 
                 <androidx.cardview.widget.CardView
@@ -220,7 +212,7 @@
                             android:id="@+id/facilityadd"
                             android:layout_width="300dp"
                             android:layout_height="80dp"
-                            android:layout_marginLeft="-305dp"
+                            android:layout_marginLeft="-255dp"
                             android:layout_marginTop="240dp"
                             android:layout_marginBottom="20dp"
                             android:background="@drawable/custom_edittext"
