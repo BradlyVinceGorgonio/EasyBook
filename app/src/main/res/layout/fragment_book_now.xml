@@ -171,7 +171,7 @@
                     android:layout_width="350dp"
                     android:layout_height="350dp"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="40dp"
               >
 
                     <LinearLayout
@@ -218,7 +218,7 @@
                             android:id="@+id/facilityadd"
                             android:layout_width="300dp"
                             android:layout_height="80dp"
-                            android:layout_marginLeft="-280dp"
+                            android:layout_marginLeft="-305dp"
                             android:layout_marginTop="240dp"
                             android:background="@drawable/custom_edittext"
                             android:hint=" Enter your training facility address:"
