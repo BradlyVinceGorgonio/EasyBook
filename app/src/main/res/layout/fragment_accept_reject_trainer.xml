@@ -171,7 +171,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="470dp"
             android:layout_marginTop="600dp"
             android:layout_marginLeft="-300dp"
             >
