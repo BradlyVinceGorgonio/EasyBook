@@ -60,7 +60,7 @@
             android:background="#FF0000"
             android:text="Done"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="35dp"
             ></TextView>
 
 

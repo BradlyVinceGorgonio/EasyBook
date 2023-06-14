@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="520dp"
-        android:layout_marginLeft="280dp"
+        android:layout_marginLeft="250dp"
         app:cardCornerRadius="10dp">
 
         <TextView
@@ -60,7 +60,7 @@
             android:background="#FF0000"
             android:text="Proceed"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="35dp"
             ></TextView>
 
 
