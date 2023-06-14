@@ -219,9 +219,8 @@
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="385dp"
+                android:layout_width="match_parent"
                 android:layout_height="470dp"
-                android:layout_marginLeft="12.5dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="200dp"
                 app:cardElevation="20dp">
